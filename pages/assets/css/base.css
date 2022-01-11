@@ -1,0 +1,100 @@
+:root{
+    --mainColor: #ec6f20;
+    --lightMainColor: #fff4ec;
+    --color-border-grey: #e0dede;
+}
+body{
+    font-family: 'Noto Serif', serif!important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 7px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #525965;
+    border: 0px none #ffffff;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+/* General */
+.mainColor-bg{
+    background-color: var(--mainColor) !important;
+}
+.text-orange{
+    color: var(--mainColor) !important;
+}
+
+/* Bouton orange */
+.btn-orange {
+    color: #fff;
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+
+.btn-orange:hover {
+    color: #fff;
+    background-color: #ca601d;
+    border-color: #ca601d;
+}
+
+.btn-orange:focus, .btn-orange.focus {
+    color: #fff;
+    background-color: #df6920;
+    border-color: #ca601d;
+    box-shadow: 0 0 0 0.2rem rgba(236, 111, 32, 0.5);
+}
+
+.btn-orange.disabled, .btn-orange:disabled {
+    color: #fff;
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+
+.btn-orange:not(:disabled):not(.disabled):active, .btn-orange:not(:disabled):not(.disabled).active,
+.show > .btn-orange.dropdown-toggle {
+    color: #fff;
+    background-color: #ca601d;
+    border-color: #df6920;
+}
+
+.btn-orange:not(:disabled):not(.disabled):active:focus, .btn-orange:not(:disabled):not(.disabled).active:focus,
+.show > .btn-orange.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(236, 111, 32, 0.5);
+}
+
+.btn-outline-orange {
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+.btn-outline-orange:focus, .btn-outline-orange.focus {
+  color: #fff;
+  background-color: var(--mainColor);
+  border-color: var(--mainColor);
+  box-shadow: 0 0 0 0.2rem rgba(167, 124, 88, 0.5);
+}
+
+.card-header{
+    background-color: var(--lightMainColor)!important;
+}
+
+.dropdown-item:focus{
+    background-color: var(--mainColor);
+}
+.form-control:focus{
+    border-color: var(--mainColor);
+    box-shadow: 0 0 0 0.2rem rgba(167, 124, 88, 0.5);
+}
