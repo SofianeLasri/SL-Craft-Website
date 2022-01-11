@@ -47,56 +47,11 @@ function loadPage(){
     }
 }
 
-// Générer les liens
-function genPageLink($path="/"){
-    global $localSettings;
-    if (substr($path, 0, 1) != '/') {
-        $path = '/' . $path;
-    }
-
-    $pages = explode("/", $path);
-    array_shift($pages);
-
-    $return = "index.php?";
-    // Ici on va vérifier le mode de récupération de l'url
-    // On prend l'exemple de ces appels: 
-    // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
-    // 
-    if($localSettings["urlMode"] == "parameters"){
-        // est-ce que c'est une page admin?
-        if($pages[0]=="admin"){
-            // Oui
-            if(isset($pages[1]) && !empty($pages[1])){
-                $return = $return . "page=".$pages[1];
-            }else{
-                $return = $return . "page=index";
-            }
-            $return = $return . "&admin";
-            if(isset($pages[2]) && !empty($pages[2])){
-                $return = $return . "&".str_replace("?", "", $pages[2]);
-            }
-        }else{
-            // Non
-            if(isset($pages[0]) && !empty($pages[0])){
-                $return = $return . "page=".$pages[0];
-            }
-            if(isset($pages[1]) && !empty($pages[1])){
-                $return = $return . "&".str_replace("?", "", $pages[1]);
-            }
-        }
-    }else{
-        // Pas besoin de travailler, on donne les alias par défaut
-        $path = ltrim($path, '/');
-        $return = $path;
-    }
-    return $return;
-}
-
 // Vérifie si un username ou un email existe dans la bdd
 function checkUsernameEmail($data){
 	$pos = strpos($data, "@");
 	if ($pos !== false) {
-		$response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE name='email' AND value=?");
+		$response = Connexion::pdo()->prepare("SELECT * FROM site_userSetting WHERE name='email' AND value=?");
 		$response->execute([strtolower($data)]);
 		if (empty($response->fetch())) {
 			return false;
@@ -104,7 +59,7 @@ function checkUsernameEmail($data){
 			return true;
 		}
 	} else {
-		$response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE username=?");
+		$response = Connexion::pdo()->prepare("SELECT * FROM site_user WHERE username=?");
 		$response->execute([strtolower($data)]);
 		if (empty($response->fetch())) {
 			return false;
@@ -118,32 +73,32 @@ function login($usernameEmail, $password){
     $usernameEmail = strtolower($usernameEmail);
     $pos = strpos($usernameEmail, "@");
     if ($pos !== false) {
-        $response = Connexion::pdo()->prepare("SELECT userId FROM m_userSetting WHERE name='email' AND value=?");
+        $response = Connexion::pdo()->prepare("SELECT userId FROM site_userSetting WHERE name='email' AND value=?");
         $response->execute([$usernameEmail]);
         $supposedUserId = $response->fetchColumn();
 
-        $response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE id=?");
+        $response = Connexion::pdo()->prepare("SELECT * FROM site_user WHERE id=?");
         $response->execute([$supposedUserId]);
     } else {
-        $response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE username=?");
+        $response = Connexion::pdo()->prepare("SELECT * FROM site_user WHERE username=?");
         $response->execute([$usernameEmail]);
     }
     $user=$response->fetch(PDO::FETCH_ASSOC);
     if (!empty($user)) {
         if(password_verify($password, $user["password"])){
             // On vérifie l'ip
-            $response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp'");
+            $response = Connexion::pdo()->prepare("SELECT * FROM site_userSetting WHERE userId=? AND name='lastIp'");
             $response->execute([$user['id']]);
             $result = $response->fetch(PDO::FETCH_ASSOC);
 
             if (empty($result)) {
                 // Aucun champ d'ip n'existe
-                $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
+                $response = Connexion::pdo()->prepare("INSERT INTO site_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
                 $response->execute([$user['id'], 'lastIp', $ip]);
             }else{
                 if($result["value"]!=$ip){
                     // Il existe un champ, on va le comparer
-                    $response = Connexion::pdo()->prepare("UPDATE m_userSetting SET `value`=? WHERE `userId`=? AND name='lastIp'");
+                    $response = Connexion::pdo()->prepare("UPDATE site_userSetting SET `value`=? WHERE `userId`=? AND name='lastIp'");
                     $response->execute([$ip, $user['id']]);
                 }
                 
@@ -153,7 +108,7 @@ function login($usernameEmail, $password){
             $_SESSION['userName'] = $user['username'];
             $_SESSION['userGroupId'] = $user['groupId'];
 
-            $userProfilPic = Connexion::pdo()->prepare("SELECT value FROM m_userSetting WHERE userId=? AND name='profilPic'");
+            $userProfilPic = Connexion::pdo()->prepare("SELECT value FROM site_userSetting WHERE userId=? AND name='profilPic'");
             $userProfilPic->execute([$user['id']]);
             $userProfilPic = $userProfilPic->fetchColumn();
 
@@ -180,23 +135,23 @@ function registerUser($username, $password, $email){
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         // Ici on récupère l'id du groupe des utilisateurs
-        $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nom='utilisateur'")->fetchColumn();
+        $userGroupId = Connexion::pdo()->query("SELECT id FROM site_userGroup WHERE nom='utilisateur'")->fetchColumn();
 
         // Là on va insérer l'utilisateur dans la table des utilisateurs
-        $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, groupId, username, password) VALUES (?,?, ?, ?)");
+        $query = Connexion::pdo()->prepare("INSERT INTO site_user (id, groupId, username, password) VALUES (?,?, ?, ?)");
         $query->execute([null, $userGroupId, $username, $password]);
 
         // Maintenant on va récuper son id
-        $query = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?");
+        $query = Connexion::pdo()->prepare("SELECT id FROM site_user WHERE username=?");
         $query->execute([$username]);
         $userId = $query->fetchColumn();
         
         // On va insérer son adresse mail
-        $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
+        $query = Connexion::pdo()->prepare("INSERT INTO site_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
         $query->execute([$userId, 'email', $email]);
 
         // Sa date d'inscription
-        $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
+        $query = Connexion::pdo()->prepare("INSERT INTO site_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
         $query->execute([$userId, 'joinedDate', date("Y-m-d H:i:s")]);
 
         $return["success"] = "Inscription réussie, tu peux désormais te connecter! 🥳";
@@ -204,84 +159,6 @@ function registerUser($username, $password, $email){
         $return["error"] = 'Ton mot de passe doit être long d\'au moins 8 caractères et doit contenir au moins 1 majuscule, 1 minuscule et 1 nombre.';
     }
     return $return;
-}
-
-// Recettes
-function getRecettes($search=""){
-    // C'est gitcopilot qui écrit 75% de cette fonction
-
-    // On va récupérer les recettes selon la recherche
-    // Si $search est une liste, on va chercher selon son contenu
-    // $search["categoryId"], $search["name"], ["ingredientId"], ["difficulte"], ["time"], ["auteurId"]
-    if(is_array($search) && !empty($search)){
-        // https://stackoverflow.com/a/18603279
-        $categoryId = $search["categoryId"] ?? "";
-        $name = $search["name"] ?? "";
-        $ingredients = $search["ingredients"] ?? "";
-        $difficulte = $search["difficulte"] ?? "";
-        $tempsPreparation = $search["tempsPreparation"] ?? "";
-        $auteurId = $search["auteurId"] ?? "";
-
-        // On construit la requête
-        $queryString = "SELECT * FROM m_recette INNER JOIN m_recetteIngredient ON m_recette.id=m_recetteIngredient.recetteId  WHERE 1=1";
-        if(!empty($categoryId)){
-            $queryString .= " AND categoryId=:categoryId";
-        }
-        if(!empty($name)){
-            $queryString .= " AND nom LIKE :name";
-        }
-        if(!empty($ingredients)){
-            $ingredientsIn = implode(',', $ingredients);
-            $queryString .= " AND ingredientId IN (:ingredients)";
-        }
-        if(!empty($difficulte)){
-            $queryString .= " AND difficulte=:difficulte";
-        }
-        if(!empty($tempsPreparation)){
-            $queryString .= " AND tempsPreparation=:tempsPreparation";
-        }
-        if(!empty($auteurId)){
-            $queryString .= " AND auteurId=:auteurId";
-        }
-        // On la prépare
-        $query = Connexion::pdo()->prepare($queryString." ORDER BY nom");
-
-        // On rempli les paramètres
-        if(!empty($categoryId)){
-            $query->bindParam(':categoryId', $categoryId);
-        }
-        if(!empty($name)){
-            $name = "%".$name."%";
-            $query->bindParam(':name', $name);
-        }
-        if(!empty($ingredientId)){
-            $query->bindParam(':ingredients', $ingredientsIn);
-        }
-        if(!empty($difficulte)){
-            $query->bindParam(':difficulte', $difficulte);
-        }
-        if(!empty($tempsPreparation)){
-            $query->bindParam(':tempsPreparation', $tempsPreparation);
-        }
-        if(!empty($auteurId)){
-            $query->bindParam(':auteurId', $auteurId);
-        }
-
-        // On exécute
-        $query->execute();
-        // Et on retourne le résultat
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }else{
-        // Si $search n'est pas un array, on va chercher toutes les recettes
-        $query = Connexion::pdo()->prepare("SELECT * FROM m_recette ORDER BY nom");
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }
-}
-function getRecette($recetteId){
-    $query = Connexion::pdo()->prepare("SELECT * FROM m_recette WHERE id=?");
-    $query->execute([$recetteId]);
-    return $query->fetch(PDO::FETCH_ASSOC);
 }
 
 // Vérifie les permissions
@@ -306,7 +183,7 @@ function verifyUserPermission($userId, $permission){
         }
     }
     // On peut maintenant vérifier dans la bdd
-    $response = Connexion::pdo()->prepare("SELECT m_permission.id FROM m_permissionGroup INNER JOIN m_permission ON m_permissionGroup.id=m_permission.groupId WHERE m_permissionGroup.name=? AND m_permission.name=?");
+    $response = Connexion::pdo()->prepare("SELECT site_permission.id FROM site_permissionGroup INNER JOIN site_permission ON site_permissionGroup.id=site_permission.groupId WHERE site_permissionGroup.name=? AND site_permission.name=?");
     $response->execute([$groupName, $permissionName]);
     $targetPermId = $response->fetchColumn();
 
@@ -318,7 +195,7 @@ function verifyUserPermission($userId, $permission){
     if(isSuperAdmin($userId)){
         return true;
     }else{
-        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionUtilisateur WHERE userId=? AND permId=?");   
+        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM site_userPermission WHERE userId=? AND permId=?");   
         $response->execute([$userId, $targetPermId]);
         $hasPermission = $response->fetchColumn();
         if($hasPermission == 0)$hasPermission = false;
@@ -328,7 +205,7 @@ function verifyUserPermission($userId, $permission){
 
     // Si l'utilisateur n'a pas la permission, on va vérifier si le groupe l'a
     if(!$hasPermission){
-        $response = Connexion::pdo()->prepare("SELECT groupId FROM m_utilisateur WHERE id=?");
+        $response = Connexion::pdo()->prepare("SELECT groupId FROM site_user WHERE id=?");
         $response->execute([$userId]);
         $userGroupId = $response->fetchColumn();
 
@@ -336,7 +213,7 @@ function verifyUserPermission($userId, $permission){
             throw new Exception('Erreur! L\'utilisateur n\'existe pas.');
         }
 
-        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionGroupeUtilisateur WHERE groupId=? AND permId=?");   
+        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM site_userGroupPermission WHERE groupId=? AND permId=?");   
         $response->execute([$userGroupId, $targetPermId]);
         $hasPermission = $response->fetchColumn();
         if($hasPermission == 0)$hasPermission = false;
@@ -348,8 +225,8 @@ function verifyUserPermission($userId, $permission){
 
 // Check si l'utilisateur est surper utilisateur
 function isSuperAdmin($userId){
-    $superAdminGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nom='superAdmin'")->fetchColumn();
-    $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_utilisateur WHERE id=? AND groupId=?");
+    $superAdminGroupId = Connexion::pdo()->query("SELECT id FROM site_userGroup WHERE nom='superAdmin'")->fetchColumn();
+    $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM site_user WHERE id=? AND groupId=?");
     $response->execute([$userId, $superAdminGroupId]);
     $isSuperAdmin = $response->fetchColumn();
     if($isSuperAdmin == 0) return false;
@@ -358,7 +235,7 @@ function isSuperAdmin($userId){
 
 // Récupère les paramètres du site
 function getWebsiteSetting($setting){
-    $response = Connexion::pdo()->prepare("SELECT value FROM m_siteSetting WHERE name=?");
+    $response = Connexion::pdo()->prepare("SELECT value FROM site_siteSetting WHERE name=?");
     $response->execute([$setting]);
     $settingValue = $response->fetchColumn();
     return $settingValue; // Retourne null si le paramètre n'existe pas
@@ -377,7 +254,7 @@ function getUtilisateur($search=""){
 
         $username = $search["username"] ?? "";
 
-        $queryString = "SELECT * FROM m_utilisateur WHERE 1=1";
+        $queryString = "SELECT * FROM site_user WHERE 1=1";
         if(!empty($userId)){
             $queryString .= " AND id=:userId";
         }
@@ -402,7 +279,7 @@ function getUtilisateur($search=""){
         return $query->fetch(PDO::FETCH_ASSOC);
     }else{
         // Si $search n'est pas un array, on va chercher tous les utilisateurs
-        $query = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur ORDER BY username");
+        $query = Connexion::pdo()->prepare("SELECT * FROM site_user ORDER BY username");
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -414,68 +291,4 @@ function isConnected(){
         header("Location: ".genPageLink("/login"));
         exit();
     }
-}
-
-// Récupréation diverses infos relatives aux recettes
-function getCategories(){
-    $query = Connexion::pdo()->prepare("SELECT * FROM m_categorie ORDER BY nom");
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_ASSOC);
-}
-function getUstensiles(){
-    $query = Connexion::pdo()->prepare("SELECT * FROM m_ustensile ORDER BY nom");
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_ASSOC);
-}
-function getIngredients($recetteId=""){
-    if(empty($recetteId)){
-        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient ORDER BY nom");
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }else{
-        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient WHERE id IN (SELECT ingredientId FROM m_recetteIngredient WHERE recetteId=:recetteId) ORDER BY nom");
-        $query->bindParam(':recetteId', $recetteId);
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }
-    
-}
-
-// Envoyer une recette
-function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recetteCategory, $recetteIngredients, $recettePreparation, $recetteUstensiles, $recetteHeaderPic, $recetteDifficulte){
-    $recetteTitle = utf8_encode(htmlspecialchars($recetteTitle));
-    $recetteContent = utf8_encode(htmlspecialchars($recetteContent));
-    $recetteDescription = utf8_encode(htmlspecialchars($recetteDescription));
-    $quantite = 1; // Je suis un boulet j'ai oublié ça xD
-
-    // On insert la recette
-    $query = Connexion::pdo()->prepare("INSERT INTO m_recette (id, categoryId, auteurId, nom, description, contenu, image, tempsPreparation, difficulte, datePost, dateModif) VALUES (NULL, :categoryId, :auteurId, :nom, :description, :contenu, :image, :tempsPreparation, :difficulte, NOW(), NOW())");
-    $query->bindParam(':categoryId', $recetteCategory);
-    $query->bindParam(':auteurId', $_SESSION["userId"]);
-    $query->bindParam(':nom', $recetteTitle);
-    $query->bindParam(':description', $recetteDescription);
-    $query->bindParam(':contenu', $recetteContent);
-    $query->bindParam(':image', $recetteHeaderPic);
-    $query->bindParam(':tempsPreparation', $recettePreparation);
-    $query->bindParam(':difficulte', $recetteDifficulte);
-    $query->execute();
-
-    // Puis on répertorie les ingrédients
-    $recetteId = Connexion::pdo()->lastInsertId();
-    foreach($recetteIngredients as $ingredient){
-        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteIngredient (recetteId, ingredientId, quantite) VALUES (:recetteId, :ingredientId, :quantite)");
-        $query->bindParam(':recetteId', $recetteId);
-        $query->bindParam(':ingredientId', $ingredient);
-        $query->bindParam(':quantite', $quantite); 
-        $query->execute();
-    }
-    // Et on termine par les ustensiles
-    foreach($recetteUstensiles as $ustensile){
-        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteUstensile (recetteId, ustensileId) VALUES (:recetteId, :ustensileId)");
-        $query->bindParam(':recetteId', $recetteId);
-        $query->bindParam(':ustensileId', $ustensile);
-        $query->execute();
-    }
-    // On retourne l'id de la recette
-    return $recetteId;
 }
