@@ -6,4 +6,7 @@
             <a class="text-light" href="#">Lien n°2</a>
         </nav>
     </div>
+    <div class="liensNav" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
+
+    </div>
 </div>

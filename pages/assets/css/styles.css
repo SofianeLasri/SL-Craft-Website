@@ -2,7 +2,7 @@
 
 /* Navbar */
 .barreDeNavigation{
-
+    z-index: 999;
 }
 .barreDeNavigation .connexionNav{
     background-color: black;
@@ -10,4 +10,11 @@
     display: flex;
     justify-content: center;
     text-transform: uppercase;
+}
+.barreDeNavigation .liensNav{
+    width: 100%;
+    min-height: 83px;
+    -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+    background-size: auto 442px;
 }
