@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<div class="barreDeNavigation container-fluid">
+<div class="barreDeNavigation">
     <div class="connexionNav">
         <nav class="container d-flex justify-content-end">
             <a class="text-light" href="#">Se connecter</a>
