@@ -1,1 +1,13 @@
 @import 'base.css';
+
+/* Navbar */
+.navbar{
+
+}
+.navbar .connexionNav{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}

@@ -3,9 +3,9 @@
 // Il faut donc l'inclure dans le "head" de chaque page
 ?>
 <!-- Icône du site -->
-<link rel="icon" type="image/svg+xml" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.svg">
-<link rel="alternate icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.ico">
-<link rel="mask-icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.svg" color="#ed8930">
+<link rel="icon" type="image/svg+xml" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-blanc.svg">
+<link rel="alternate icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-blanc.ico">
+<link rel="mask-icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-blanc.svg" color="#ffffff">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

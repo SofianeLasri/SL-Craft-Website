@@ -4,7 +4,8 @@
     --color-border-grey: #e0dede;
 }
 body{
-    font-family: 'Noto Serif', serif!important;
+    margin: 0;
+    font-family: "Proxima Nova Regular"!important;
 }
 
 /* Scrollbar */
@@ -36,6 +37,18 @@ body{
 }
 .text-orange{
     color: var(--mainColor) !important;
+}
+.container{
+    width: 100%;
+    max-width: 1600px!important;
+    margin: 0 auto;
+}
+.navbar .container{
+    justify-content: start!important;
+}
+
+.text-black{
+    color: black!important;
 }
 
 /* Bouton orange */
