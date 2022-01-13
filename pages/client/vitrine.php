@@ -26,10 +26,9 @@
         <div class="container intro-vitrine">
             <div id="intro-presentation" class="presentation">
                 <div class="description">
-                    <h1>Starisland</h1>
-                    <p>Un petit paradis sur terre où règnent les vieux retraités, venus finir leur jours paisiblements.
-                    <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
+                    <h1>Prêt pour la survie?</h1>
+                    <p>Rejoins nous et découvre une communauté construite autour de l’amour pour la survie !
+                    <br>Nous disposons de nombreux plugins favorisants l’interaction entre les joueurs, et enrichissant ton expérience de jeu.</p>
                 </div>
                 <div class="illustration" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png"></div>
             </div>
