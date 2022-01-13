@@ -38,6 +38,7 @@
     });
 
     function animatedIcon(id, action){
+        $("#"+id+" > i").find("img").html();
         if(action == 'enter'){
             $("#"+id+" > i").find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif");
         }else{
