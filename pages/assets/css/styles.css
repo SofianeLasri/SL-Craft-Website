@@ -93,7 +93,7 @@ a.siteName:hover {
 }
 .intro-vitrine .presentation{
     display: flex;
-    width: 100µ%;
+    width: 100%;
 }
 .intro-vitrine .presentation > *{
     display: none;
