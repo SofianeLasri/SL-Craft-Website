@@ -19,7 +19,7 @@
 }
 .barreDeNavigation .inferieure{
     width: 100%;
-    min-height: 83px;
+    height: 83px;
     -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 30%);
     box-shadow: 0 0 20px rgb(0 0 0 / 30%);
     background-size: auto 442px;
@@ -27,6 +27,7 @@
 .barreDeNavigation .inferieure .siteName{
     font-family: "Zaptron-Regular";
     color: white !important;
+    font-size: 2rem;
 }
 a.siteName:hover {
     text-decoration: none;
