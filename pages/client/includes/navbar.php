@@ -21,10 +21,10 @@
                             Carte du monde
                         </a>
                     </li>
-                    <li id="menu-realms">
+                    <li id="menu-comm">
                         <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                             <i class="nav-icon">
-                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-realms.svg" alt="Community icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-comm.svg" alt="Community icon">
                             </i>
                             Communauté
                         </a>
@@ -52,14 +52,6 @@
 </div>
 <script type="text/javascript">
     const joinServerIcon = document.getElementById('joinServerIcon');
-
-    joinServerIcon.addEventListener('mouseenter', e => {
-        animatedIcon("joinServerIcon", "enter");
-    });
-
-    joinServerIcon.addEventListener('mouseleave', e => {
-        animatedIcon("joinServerIcon", "leave");
-    });
 
     function animatedIcon(object.id, action){
         console.log($("#"+id).find("img").html());
