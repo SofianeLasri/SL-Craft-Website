@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
 }
-.barreDeNavigation .nav-link{
+.nav-link{
     padding: .5rem .75rem ;
     color: white;
     line-height: 1;
@@ -34,4 +34,17 @@
 }
 a.siteName:hover {
     text-decoration: none;
+}
+.barreDeNavigation .inferieure>li>a .nav-icon {
+    display: inline-block;
+    font-size: 12px;
+    line-height: inherit;
+    margin-right: 4px;
+    width: 69px;
+}
+.barreDeNavigation .inferieure>li>a .nav-icon img{
+    margin-top: -5px;
+    margin-right: -12px;
+    width: 75%;
+    margin-left: -1px;
 }

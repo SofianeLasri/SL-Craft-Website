@@ -13,7 +13,7 @@
             </div>
             <div>
                 <a href="#" class="nav-link">
-                    <i class="fa">
+                    <i class="nav-icon">
                         <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif" alt="Join icon">
                     </i>
                     Nous rejoindre
