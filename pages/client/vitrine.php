@@ -32,7 +32,7 @@
                     </p>
                 </div>
             </div>
-            <div class="illustration" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/let's%20go.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?></div>data/images/vitrine/let's%20go.png"></div>
+            <div class="illustration" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/let's%20go.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/let's%20go.png"></div>
         </div>
     </div>
     
