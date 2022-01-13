@@ -52,6 +52,7 @@
 </div>
 <script type="text/javascript">
     function animatedIcon(object, action){
+        console.log(object.id);
         if(action == 'enter'){
             $("#"+object.id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/"+object.id+".gif");
         }else{
