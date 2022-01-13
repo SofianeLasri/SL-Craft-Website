@@ -39,7 +39,7 @@
 
     function animatedIcon(id, action){
         console.log(id+" "+action);
-        console.log($("#"+id+" > i"));
+        console.log($("#"+id+" > i").html());
         $("#"+id+" > i").css("background-color", "red");
     }
 </script>
