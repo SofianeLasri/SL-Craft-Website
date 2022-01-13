@@ -13,12 +13,36 @@
             </div>
             <div>
                 <ul class="menuList">
-                    <li id="joinServerIcon">
-                        <a href="#" class="nav-link">
+                    <li id="menu-buy">
+                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.png" alt="Join icon">
                             </i>
-                            Nous rejoindre
+                            Carte du monde
+                        </a>
+                    </li>
+                    <li id="menu-realms">
+                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                            <i class="nav-icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-realms.png" alt="Community icon">
+                            </i>
+                            Communauté
+                        </a>
+                    </li>
+                    <li id="menu-store">
+                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                            <i class="nav-icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-store.png" alt="Community icon">
+                            </i>
+                            Liste des magasins
+                        </a>
+                    </li>
+                    <li id="menu-support">
+                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                            <i class="nav-icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.png" alt="Staff icon">
+                            </i>
+                            Staff
                         </a>
                     </li>
                 </ul>
@@ -37,12 +61,12 @@
         animatedIcon("joinServerIcon", "leave");
     });
 
-    function animatedIcon(id, action){
+    function animatedIcon(object.id, action){
         console.log($("#"+id).find("img").html());
         if(action == 'enter'){
-            $("#"+id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif");
+            $("#"+object.id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/"+object.id+".gif");
         }else{
-            $("#"+id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy--reversed.gif");
+            $("#"+object.id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/"+object.id+"--reversed.gif");
         }
     }
 </script>
