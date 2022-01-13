@@ -38,8 +38,10 @@
     });
 
     function animatedIcon(id, action){
-        console.log(id+" "+action);
-        console.log($("#"+id+" > i").html());
-        $("#"+id+" > i").css("background-color", "red");
+        if(action == 'enter'){
+            $("#"+id+" > i").find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif");
+        }else{
+            $("#"+id+" > i").find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy--reversed.gif");
+        }
     }
 </script>
