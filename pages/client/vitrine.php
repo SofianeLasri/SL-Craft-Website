@@ -44,12 +44,12 @@
         // On va définir la taille de l'intro
         setVitrineHeight();
         function setVitrineHeight() {
-            var vitrineHeight = window.innerHeight - document.getElementById(navbar).offsetHeight;
+            var vitrineHeight = window.innerHeight - document.getElementById("navbar").offsetHeight;
             $("#intro").css("height", vitrineHeight);
         }
         window.onresize = setVitrineHeight;
 
-        
+
         // https://stackoverflow.com/a/56341485
         async function loadImages(imageUrlArray) {
             const promiseArray = []; // create an array for promises
