@@ -34,9 +34,11 @@
 }
 a.siteName:hover {
     text-decoration: none;
+    color: white;
 }
 .menuList{
     display: table;
+    margin-top: 0;
 }
 .barreDeNavigation .inferieure .menuList>li>a .nav-icon {
     display: inline-block;
@@ -50,4 +52,5 @@ a.siteName:hover {
     margin-right: -12px;
     width: 75%;
     margin-left: -1px;
+    animation-play-state: paused;
 }
