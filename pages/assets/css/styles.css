@@ -34,7 +34,7 @@
 }
 a.siteName:hover {
     text-decoration: none;
-    color: white;
+    color: white!important;
 }
 .menuList{
     display: table;

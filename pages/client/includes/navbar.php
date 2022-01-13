@@ -31,10 +31,10 @@
 
     joinServerIcon.addEventListener('mouseenter', e => {
         animatedIcon("joinServerIcon", "enter");
-    }); false);
+    });
     joinServerIcon.addEventListener('mouseleave', e => {
         animatedIcon("joinServerIcon", "leave");
-    }); false);
+    });
 
     function animatedIcon(id, action){
         $("#"+id+" > i").css("background-color", "red");
