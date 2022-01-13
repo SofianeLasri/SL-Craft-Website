@@ -8,11 +8,11 @@
     </div>
     <div class="inferieure" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
         <div class="container d-flex align-items-center h-100">
-            <div class="flex-grow-1">
+            <div>
                 <a href="<?=getWebsiteSetting("websiteUrl")?>" class="siteName">SL-Craft</a>
             </div>
-            <div>
-                <ul class="menuList">
+            <div class="flex-grow-1">
+                <ul class="menuList float-right">
                     <li id="menu-buy" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                         <a href="#" class="nav-link">
                             <i class="nav-icon">
@@ -52,7 +52,6 @@
 </div>
 <script type="text/javascript">
     function animatedIcon(object, action){
-        console.log(object.id);
         if(action == 'enter'){
             $("#"+object.id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/"+object.id+".gif");
         }else{
