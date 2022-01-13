@@ -43,6 +43,10 @@ a.siteName:hover {
     display: table;
     margin-top: 1rem;
 }
+.barreDeNavigation .inferieure .menuList li{
+    text-align: center;
+    display: table-cell;
+}
 .barreDeNavigation .inferieure .menuList>li>a .nav-icon {
     display: inline-block;
     font-size: 12px;

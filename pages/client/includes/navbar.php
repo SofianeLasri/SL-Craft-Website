@@ -24,7 +24,7 @@
                     <li id="menu-realms">
                         <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                             <i class="nav-icon">
-                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-realms.png" alt="Community icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-realms.svg" alt="Community icon">
                             </i>
                             Communauté
                         </a>
@@ -32,7 +32,7 @@
                     <li id="menu-store">
                         <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                             <i class="nav-icon">
-                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-store.png" alt="Community icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-store.svg" alt="Community icon">
                             </i>
                             Liste des magasins
                         </a>
@@ -40,7 +40,7 @@
                     <li id="menu-support">
                         <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                             <i class="nav-icon">
-                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.png" alt="Staff icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.svg" alt="Staff icon">
                             </i>
                             Staff
                         </a>
