@@ -18,8 +18,7 @@
     font-size: .8rem;
 }
 .nav-link:hover {
-    text-decoration: none;
-    color: white;
+    color: white!important;
 }
 .barreDeNavigation .inferieure{
     width: 100%;
