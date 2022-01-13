@@ -28,3 +28,6 @@
     font-family: "Zaptron-Regular";
     color: white !important;
 }
+a.siteName:hover {
+    text-decoration: none;
+}
