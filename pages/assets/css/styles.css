@@ -28,6 +28,9 @@
     font-family: "Zaptron-Regular";
     color: white !important;
     font-size: 2rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 a.siteName:hover {
     text-decoration: none;
