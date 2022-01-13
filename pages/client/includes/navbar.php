@@ -12,8 +12,8 @@
                 <a href="<?=getWebsiteSetting("websiteUrl")?>" class="siteName">SL-Craft</a>
             </div>
             <div>
-                <ul class="menuList" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
-                    <li id="menu-buy">
+                <ul class="menuList">
+                    <li id="menu-buy" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                         <a href="#" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.png" alt="Join icon">
