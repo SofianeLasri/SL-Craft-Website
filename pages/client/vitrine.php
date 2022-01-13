@@ -22,7 +22,7 @@
 
     <!-- Intro -->
     <div id="intro">
-        <div id="vitrine-background-image" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/sildur-vibrant.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/sildur-vibrant.png"></div>
+        <div id="vitrine-background-image" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/sildur-vibrant.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/sildur-vibrant.png"></div>
         <div class="container intro-vitrine">
             <div id="intro-presentation" class="presentation">
                 <div class="description">
