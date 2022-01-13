@@ -12,12 +12,16 @@
                 <a href="<?=getWebsiteSetting("websiteUrl")?>" class="siteName">SL-Craft</a>
             </div>
             <div>
-                <a href="#" class="nav-link">
-                    <i class="nav-icon">
-                        <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif" alt="Join icon">
-                    </i>
-                    Nous rejoindre
-                </a>
+                <ul class="menuList">
+                    <li>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif" alt="Join icon">
+                            </i>
+                            Nous rejoindre
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
