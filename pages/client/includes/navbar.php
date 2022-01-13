@@ -38,11 +38,11 @@
     });
 
     function animatedIcon(id, action){
-        console.log($("#"+id+" > i").find("img").html());
+        console.log($("#"+id).find("img").html());
         if(action == 'enter'){
-            $("#"+id+" > i").find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif");
+            $("#"+id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif");
         }else{
-            $("#"+id+" > i").find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy--reversed.gif");
+            $("#"+id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy--reversed.gif");
         }
     }
 </script>
