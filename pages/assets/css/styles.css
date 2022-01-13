@@ -93,7 +93,7 @@ a.siteName:hover {
 }
 .intro-vitrine .presentation{
     display: flex;
-    width: 75%;
+    width: 100µ%;
 }
 .intro-vitrine .presentation > *{
     display: none;
@@ -106,8 +106,8 @@ a.siteName:hover {
     background-position: center;
 }
 .intro-vitrine .presentation .description{
-    width: 90%;
-    /* display: flex; */
+    /* width: 90%;
+     display: flex; */
     flex-direction: column;
     justify-content: center;
 }
