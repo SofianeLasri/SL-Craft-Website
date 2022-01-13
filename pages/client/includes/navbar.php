@@ -13,10 +13,10 @@
             </div>
             <div>
                 <ul class="menuList">
-                    <li>
+                    <li id="joinServerIcon">
                         <a href="#" class="nav-link">
                             <i class="nav-icon">
-                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.gif" alt="Join icon">
+                                <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.png" alt="Join icon">
                             </i>
                             Nous rejoindre
                         </a>
@@ -26,3 +26,17 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    const joinServerIcon = document.getElementById('joinServerIcon');
+
+    joinServerIcon.addEventListener('mouseenter', e => {
+        animatedIcon("joinServerIcon", "enter");
+    }); false);
+    joinServerIcon.addEventListener('mouseleave', e => {
+        animatedIcon("joinServerIcon", "leave");
+    }); false);
+
+    function animatedIcon(id, action){
+        $("#"+id+" > i").css("background-color", "red");
+    }
+</script>
