@@ -41,6 +41,15 @@
 
     <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
+        // On va définir la taille de l'intro
+        setVitrineHeight();
+        function setVitrineHeight() {
+            var vitrineHeight = window.innerHeight - document.getElementById(navbar).offsetHeight;
+            $("#intro").css("height", vitrineHeight);
+        }
+        window.onresize = setVitrineHeight;
+
+        
         // https://stackoverflow.com/a/56341485
         async function loadImages(imageUrlArray) {
             const promiseArray = []; // create an array for promises
@@ -72,6 +81,9 @@
         }
 
         $(window).on("load", async function() {
+            // 
+
+
             // On va regarder si dans ce que l'on va afficher, il n'y a pas des images à charger
             var imagesToLoad = [];
             $(".intro-vitrine .presentation > *").each(async function() {
