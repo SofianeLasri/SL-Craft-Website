@@ -17,6 +17,10 @@
     text-transform: uppercase;
     font-size: .8rem;
 }
+a.nav-link:hover {
+    text-decoration: none;
+    color: white;
+}
 .barreDeNavigation .inferieure{
     width: 100%;
     height: 83px;
@@ -34,7 +38,7 @@
 }
 a.siteName:hover {
     text-decoration: none;
-    color: white!important;
+    color: white;
 }
 .menuList{
     display: table;

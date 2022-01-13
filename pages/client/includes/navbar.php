@@ -32,11 +32,14 @@
     joinServerIcon.addEventListener('mouseenter', e => {
         animatedIcon("joinServerIcon", "enter");
     });
+
     joinServerIcon.addEventListener('mouseleave', e => {
         animatedIcon("joinServerIcon", "leave");
     });
 
     function animatedIcon(id, action){
+        console.log(id+" "+action);
+        console.log($("#"+id+" > i"));
         $("#"+id+" > i").css("background-color", "red");
     }
 </script>
