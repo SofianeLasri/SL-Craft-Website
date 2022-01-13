@@ -9,9 +9,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.barreDeNavigation .superieure .nav-link{
+    padding: .5rem .75rem !important;
+    color: white!important;
+    line-height: 1!important;
     text-transform: uppercase;
 }
-.barreDeNavigation .liensNav{
+.barreDeNavigation .inferieure{
     width: 100%;
     min-height: 83px;
     -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 30%);

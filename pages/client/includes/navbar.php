@@ -1,12 +1,12 @@
 <!-- Navbar -->
 <div class="barreDeNavigation">
-    <div class="connexionNav">
+    <div class="superieure">
         <nav class="container d-flex justify-content-end">
-            <a class="text-light" href="#">Se connecter</a>
-            <a class="text-light" href="#">Lien n°2</a>
+            <a class="nav-link" href="#">Associer son compte</a>
+            <a class="nav-link" href="#">Se connecter</a>
         </nav>
     </div>
-    <div class="liensNav" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
+    <div class="inferieure" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
 
     </div>
 </div>
