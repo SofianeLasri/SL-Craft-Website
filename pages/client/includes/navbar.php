@@ -7,9 +7,9 @@
         </nav>
     </div>
     <div class="inferieure" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
-        <div class="container d-flex">
-            <div class="siteName">
-                <a href="<?=getWebsiteSetting("websiteUrl")?>" class="logo">SL-Craft</a>
+        <div class="container d-flex align-items-center">
+            <div>
+                <a href="<?=getWebsiteSetting("websiteUrl")?>" class="siteName">SL-Craft</a>
             </div>
         </div>
     </div>
