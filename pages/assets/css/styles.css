@@ -4,7 +4,7 @@
 .barreDeNavigation{
     z-index: 999;
 }
-.barreDeNavigation .connexionNav{
+.barreDeNavigation .superieure{
     background-color: black;
     width: 100%;
     display: flex;
