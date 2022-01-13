@@ -54,7 +54,6 @@
     const joinServerIcon = document.getElementById('joinServerIcon');
 
     function animatedIcon(object, action){
-        console.log($("#"+id).find("img").html());
         if(action == 'enter'){
             $("#"+object.id).find("img").attr("src", "<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/"+object.id+".gif");
         }else{
