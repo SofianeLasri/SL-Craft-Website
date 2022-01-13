@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<div class="barreDeNavigation">
+<div id="navbar" class="barreDeNavigation">
     <div class="superieure">
         <nav class="container d-flex justify-content-end">
             <a class="nav-link" href="#">Associer son compte</a>

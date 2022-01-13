@@ -63,3 +63,54 @@ a.siteName:hover {
     margin-left: -1px;
     animation-play-state: paused;
 }
+/* Fin navbar */
+
+/* Intro vitrine */
+#intro{
+    width: 100%;
+    height: 95vh;
+    top: 0;
+}
+#vitrine-background-image{
+    display: none;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-position: center!important;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+}
+.intro-vitrine{
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 60vh;
+}
+.intro-vitrine .presentation{
+    display: flex;
+    width: 75%;
+}
+.intro-vitrine .presentation > *{
+    display: none;
+}
+.intro-vitrine .presentation .illustration{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.intro-vitrine .presentation .description{
+    width: 90%;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+}
+.intro-vitrine h1, h2{
+    font-family: "Proxima Nova Bold"!important;
+}
+
+/* Fin intro vitrine */
