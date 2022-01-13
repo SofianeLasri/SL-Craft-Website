@@ -10,11 +10,12 @@
     display: flex;
     justify-content: center;
 }
-.barreDeNavigation .superieure .nav-link{
-    padding: .5rem .75rem !important;
-    color: white!important;
-    line-height: 1!important;
+.barreDeNavigation .nav-link{
+    padding: .5rem .75rem ;
+    color: white;
+    line-height: 1;
     text-transform: uppercase;
+    font-size: .8rem;
 }
 .barreDeNavigation .inferieure{
     width: 100%;
@@ -22,4 +23,8 @@
     -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 30%);
     box-shadow: 0 0 20px rgb(0 0 0 / 30%);
     background-size: auto 442px;
+}
+.barreDeNavigation .inferieure .siteName{
+    font-family: "Zaptron-Regular";
+    color: white !important;
 }
