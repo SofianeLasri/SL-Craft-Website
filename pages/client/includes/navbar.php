@@ -12,33 +12,33 @@
                 <a href="<?=getWebsiteSetting("websiteUrl")?>" class="siteName">SL-Craft</a>
             </div>
             <div>
-                <ul class="menuList">
+                <ul class="menuList" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
                     <li id="menu-buy">
-                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.png" alt="Join icon">
                             </i>
                             Carte du monde
                         </a>
                     </li>
-                    <li id="menu-comm">
-                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                    <li id="menu-comm" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-comm.svg" alt="Community icon">
                             </i>
                             Communauté
                         </a>
                     </li>
-                    <li id="menu-store">
-                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                    <li id="menu-store" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-store.svg" alt="Community icon">
                             </i>
                             Liste des magasins
                         </a>
                     </li>
-                    <li id="menu-support">
-                        <a href="#" class="nav-link" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                    <li id="menu-support" onmouseover="animatedIcon(this, 'enter')" onmouseout="animatedIcon(this, 'leave')">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.svg" alt="Staff icon">
                             </i>
