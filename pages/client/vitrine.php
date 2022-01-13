@@ -10,7 +10,7 @@
     <meta content="<?=getWebsiteSetting("websiteName")?>" property="og:title" />
     <meta content="<?=getWebsiteSetting("websiteDescription")?>" property="og:description" />
     <meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
-    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/short-blanc.png" property="og:image" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-blanc.svg" property="og:image" />
     <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
     <!-- Uniquement pour la vitrine -->
@@ -27,7 +27,7 @@
             <div id="intro-presentation" class="presentation">
                 <div class="description">
                     <h1>Prêt pour la survie?</h1>
-                    <p>Rejoins nous et découvre une communauté construite autour de l’amour pour la survie !
+                    <p>Rejoins-nous et découvre une communauté construite autour de l’amour pour la survie !
                     <br>Nous disposons de nombreux plugins favorisants l’interaction entre les joueurs, et enrichissant ton expérience de jeu.</p>
                 </div>
                 <div class="illustration" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png"></div>
