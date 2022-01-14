@@ -58,7 +58,7 @@
                 <div class="row">
                     <?php
                     $shops = Shop::getShops();
-                    foreach($shop as $shop){
+                    foreach($shops as $shop){
                         $texture = $shop['item']->getTexture();
                         echo ('<div class="col-sm">
                                     <div class="card" style="width: 18rem;">
