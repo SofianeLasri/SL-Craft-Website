@@ -30,8 +30,9 @@
                 <h3>Filtres</h3>
                 <form method="get" name="filterForm">
                     <div class="form-group">
-                        <label>Example multiple select</label>
+                        <label>Trier par entité/bloc</label>
                         <select multiple class="form-control" name="blocs[]">
+                            <option value="">Aucune</option>
                             <?php
                             $items = Shop::getAllProducts();
                             foreach($items as $item) {
