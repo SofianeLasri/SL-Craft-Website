@@ -10,8 +10,6 @@ body{
 
 h1, h2, h3, h4, h5, h6{
     font-family: "Proxima Nova Bold"!important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 /* Scrollbar */
