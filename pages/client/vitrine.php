@@ -29,6 +29,9 @@
                     <h1>Prêt pour la survie?</h1>
                     <p>Rejoins-nous et découvre une communauté construite autour de l’amour pour la survie !
                     <br>Nous disposons de nombreux plugins favorisants l’interaction entre les joueurs, et enrichissant ton expérience de jeu.</p>
+                    <div class="mc-button full">
+                        <div class="title">Rejoindre</div>
+                    </div>
                 </div>
                 <div class="illustration" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png');" bgImageUrl="<?=getWebsiteSetting("websiteUrl")?>data/images/vitrine/letsgo.png"></div>
             </div>
