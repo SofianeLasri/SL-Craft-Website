@@ -50,7 +50,10 @@
                     <h5 class="modal-title">Rejoindre le serveur</h5>
                 </div>
                 <div class="modal-body">
-                ...
+                    <div class="form-group">
+                        <label>Adresse du serveur</label>
+                        <input type="text" class="form-control" value="play.sl-craft.fr" readonly   >
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="mc-button normal" data-dismiss="modal">
