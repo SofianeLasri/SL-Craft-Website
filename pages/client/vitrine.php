@@ -45,7 +45,7 @@
     <!-- connectModal -->
     <div class="modal fade" id="connectModal">
         <div class="modal-dialog">
-            <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wool-white.png');">
+            <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
                 <div class="modal-header">
                     <h5 class="modal-title">Rejoindre le serveur</h5>
                 </div>

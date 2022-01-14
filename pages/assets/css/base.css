@@ -179,11 +179,17 @@ body{
 .modal-title{
     font-family: "Proxima Nova Bold"!important;
     color: white!important;
+    border-top: 0!important;
 }
 .modal-header{
     background-color: #000!important;
     padding: .25rem 1rem!important;
 }
+.modal-body{
+    padding: .25rem 1rem!important;
+    color: white!important;
+}
 .modal-footer{
     padding: .25rem 1rem!important;
+    border-top: 0!important;
 }
