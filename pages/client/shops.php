@@ -23,7 +23,14 @@
     
     <!-- Contenu -->
     <div class="container mt-5">
-        <h3>Liste des magasins</h3>
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <h3>Filtres</h3>
+            </div>
+            <div class="col-md-8">
+                <h3>Liste des magasins</h3>
+            </div>
+        </div>
     </div>
 
     <?=Client::getFooter()?>
