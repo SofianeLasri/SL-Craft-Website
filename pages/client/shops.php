@@ -100,6 +100,7 @@
                         
                     }
                     ?>
+                    <?php /*
                     <!-- exemple -->
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
@@ -144,6 +145,7 @@
                         </div>
                     </div>
                     <!-- exemple -->
+                    */ ?>
 
                 </div>
             </div>
