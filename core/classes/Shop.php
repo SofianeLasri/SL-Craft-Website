@@ -3,6 +3,7 @@ class Shop{
     public static function getAllProducts(){
         $itemConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchColumn();
         $items = yaml_parse($itemConfig);
+        print_r($items);
 
         /*
         item:
