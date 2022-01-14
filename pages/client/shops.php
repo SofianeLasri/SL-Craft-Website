@@ -35,7 +35,7 @@
                             <?php
                             $items = Shop::getAllProducts();
                             foreach($items as $item) {
-                                echo '<option value="'.$item->getId().'">'.$item->getLabel().'</option>';
+                                echo '<option value="'.$item->getId().'"><i class="icon-minecraft '.$item->getCss().'"></i> '.$item->getLabel().'</option>';
                             }
                             ?>
                         </select>
