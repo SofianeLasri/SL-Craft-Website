@@ -57,7 +57,7 @@
 
                 <div class="row">
                     <?php
-                    $shops = Shop::getAllShops();
+                    $shops = Shop::getShops();
                     foreach($shop as $shop){
                         $texture = $shop['item']->getTexture();
                         echo ('<div class="col-sm">
