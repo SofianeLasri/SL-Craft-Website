@@ -78,11 +78,9 @@
                                             
                                             <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
                                             <p class="card-text">Test content</p>
-                                            <a href="#">
-                                                <div class="mc-button normal">
-                                                    <div class="title">Se téléporter</div>
-                                                </div>
-                                            </a>
+                                            <div class="mc-button normal">
+                                                <div class="title">Se téléporter</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>');
@@ -106,11 +104,9 @@
                                 
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#">
-                                    <div class="mc-button normal">
-                                        <div class="title">Se téléporter</div>
-                                    </div>
-                                </a>
+                                <div class="mc-button normal">
+                                    <div class="title">Se téléporter</div>
+                                </div>
                             </div>
                         </div>
                     </div>
