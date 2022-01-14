@@ -6,6 +6,7 @@ require_once "core/conf/ConfigurationGenerale.php"; // Ce fichier contient diver
 require_once "core/classes/Connexion.php"; // Ce fichier se charge de la connexion à la base de donnée
 require_once "core/classes/Shop.php";
 require_once "core/classes/Item.php";
+require_once "core/classes/Seller.php";
 require_once "core/controller/variables.php"; // Ce fichier se charge de récupérer les variables globales
 require_once "core/controller/functions.php"; // Et celui-ci des différentes fonctions
 

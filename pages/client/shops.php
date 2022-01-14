@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/css/flickity.css" media="screen">
 
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/icons-minecraft-0.49.css">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/minecraft-skinviewer.css">
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/bloc.css">
 </head>
 <body>
@@ -61,47 +62,35 @@
                     foreach($shops as $shop){
                         $representation = $shop['item']->getRepresentation();
                         if($representation["type"] == "block"){
-                            echo ('<div class="col-sm">
+                            $cardTop = ('<div class="object">
+                            <div class="block grass">
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--top --></div>
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--bottom--></div>
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--left--></div>
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--right--></div>
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--back--></div>
+                                <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--front--></div>
+                            </div>
+                        </div>');
+                            
+                        }else{
+                            $cardTop = ('<img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">');
+                        }
+                        echo ('<div class="col-sm">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <div class="card-top">
-                                                <div class="object">
-                                                    <div class="block grass">
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--top --></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--bottom--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--left--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--right--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--back--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--front--></div>
-                                                    </div>
-                                                </div>
+                                                '.$cardTop.'
                                             </div>
                                             
                                             <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
-                                            <p class="card-text">Test content</p>
+                                            <p class="card-text"><div class="mc-face-viewer-8x" style="background-image:url(\''.$shop['seller']->getSkin().'\')"></div>                                            </p>
                                             <div class="mc-button normal">
                                                 <div class="title">Se téléporter</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>');
-                        }else{
-                            echo ('<div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <div class="card-top">
-                                            <img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">
-                                    </div>
-                                    
-                                    <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
-                                    <p class="card-text">Test content</p>
-                                    <div class="mc-button normal">
-                                        <div class="title">Se téléporter</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>');
-                        }
                         
                     }
                     ?>

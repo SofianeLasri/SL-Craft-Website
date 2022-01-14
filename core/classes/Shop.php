@@ -35,6 +35,8 @@ class Shop{
             for($i=0;$i<count($shops);$i++){
                 $item = yaml_parse($shops[$i]['itemConfig']);
                 $shops[$i]['item'] = new Item(strtolower($item['item']['type']));
+                $owner = json_decode($shops[$i]['owner'], true);
+                $shops[$i]['seller'] = new Seller($owner["owner"]);
             }
             return $shops;
         }
