@@ -34,12 +34,12 @@
                         <select multiple class="form-control" name="blocs[]">
                             <?php
                             $items = Shop::getAllProducts();
-                            if(isset($_GET["blocs"]) && in_array($item->getId(), $_GET["blocs"])){
-                                $selected = "selected";
-                            }else{
-                                $selected = "";
-                            }
                             foreach($items as $item) {
+                                if(isset($_GET["blocs"]) && in_array($item->getId(), $_GET["blocs"])){
+                                    $selected = "selected";
+                                }else{
+                                    $selected = "";
+                                }
                                 echo '<option value="'.$item->getId().'" '.$selected.'><i class="icon-minecraft '.$item->getCss().'"></i> '.$item->getLabel().'</option>';
                             }
                             ?>
