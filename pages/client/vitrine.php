@@ -45,7 +45,7 @@
     <!-- connectModal -->
     <div class="modal fade" id="connectModal">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-white.png');">
                 <div class="modal-header">
                     <h5 class="modal-title">Rejoindre le serveur</h5>
                 </div>
@@ -53,7 +53,9 @@
                 ...
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class="mc-button normal" data-dismiss="modal">
+                        <div class="title">Copié</div>
+                    </div>
                 </div>
             </div>
         </div>

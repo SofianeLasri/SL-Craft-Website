@@ -169,8 +169,11 @@ body{
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+.modal-content{
+    border: 0!important;
 }
 .modal-title{
     font-family: "Proxima Nova Bold"!important;
@@ -178,4 +181,8 @@ body{
 }
 .modal-header{
     background-color: #000!important;
+    padding: .25rem 1rem!important;
+}
+.modal-footer{
+    padding: .25rem 1rem!important;
 }
