@@ -10,7 +10,7 @@
     <meta content="<?=getWebsiteSetting("websiteName")?> | Magasins" property="og:title" />
     <meta content="Liste des magasins créés par les joueurs en jeu." property="og:description" />
     <meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
-    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-blanc.svg" property="og:image" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon-color.png" property="og:image" />
     <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
     <!-- Uniquement pour la vitrine -->
