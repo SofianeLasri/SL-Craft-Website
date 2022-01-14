@@ -76,7 +76,7 @@
                         }else{
                             $cardTop = ('<img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">');
                         }
-                        echo ('<div class="col-sm">
+                        echo ('<div class="col-sm mb-2">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <div class="card-top">
