@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/css/flickity.css" media="screen">
 
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/icons-minecraft-0.49.css">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/bloc.css">
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->
@@ -58,6 +59,16 @@
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
+                                <div class="object">
+                                    <div class="block grass">
+                                        <div><!--top --></div>
+                                        <div><!--bottom--></div>
+                                        <div><!--left--></div>
+                                        <div><!--right--></div>
+                                        <div><!--back--></div>
+                                        <div><!--front--></div>
+                                    </div>
+                                </div>
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#">
