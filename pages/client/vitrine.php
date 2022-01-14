@@ -29,7 +29,7 @@
                     <h1>Prêt pour la survie?</h1>
                     <p>Rejoins-nous et découvre une communauté construite autour de l’amour pour la survie !
                     <br>Nous disposons de nombreux plugins favorisants l’interaction entre les joueurs, et enrichissant ton expérience de jeu.</p>
-                    <div class="mc-button normal">
+                    <div class="mc-button normal" data-toggle="modal" data-target="#connectModal">
                         <div class="title">Rejoindre</div>
                     </div>
                 </div>
@@ -41,6 +41,26 @@
     <!-- Fin de l'intro -->
 
     <?=Client::getFooter()?>
+
+    <!-- connectModal -->
+    <div class="modal fade" id="connectModal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
