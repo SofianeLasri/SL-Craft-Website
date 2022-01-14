@@ -40,7 +40,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="mc-button normal" onClick="javascript:this.form.submit();">
+                    <div class="mc-button normal" onclick="javascript:this.form.submit();">
                         <div class="title">Rejoindre</div>
                     </div>
                 </form>
