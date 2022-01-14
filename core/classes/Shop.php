@@ -16,12 +16,12 @@ class Shop{
         foreach($items as $item){
             $itemAleadyEntered = false;
             foreach($return as $checkItem){
-                if($item->item->type == $checkItem->getId()){
+                if($item['item']['type'] == $checkItem->getId()){
                     $itemAleadyEntered = true;
                 }
             }
             if(!$itemAleadyEntered){
-                $return[] = new Item($item->item->type);
+                $return[] = new Item($item['item']['type']);
             }
         }
         return $return;
