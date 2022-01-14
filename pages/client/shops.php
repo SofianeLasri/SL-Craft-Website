@@ -84,7 +84,13 @@
                                             </div>
                                             
                                             <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
-                                            <p class="card-text"><div class="mc-face-viewer-8x" style="background-image:url(\''.$shop['seller']->getSkin().'\')"></div>                                            </p>
+                                            <div class="d-flex">
+                                                <div class="mc-face-viewer-4x" style="background-image:url(\''.$shop['seller']->getSkin().'\')"></div>
+                                                <div class="d-flex flex-column">
+                                                    <span><strong>Vendu par:</strong> '.$shop['seller']->getUsername().'</span>
+                                                    <span><strong>Prix:</strong> '.$shop['price'].'€</span>
+                                                </div>
+                                            </div>
                                             <div class="mc-button normal">
                                                 <div class="title">Se téléporter</div>
                                             </div>
