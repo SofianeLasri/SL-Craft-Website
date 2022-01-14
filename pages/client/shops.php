@@ -59,19 +59,20 @@
                     <?php
                     $shops = Shop::getShops();
                     foreach($shops as $shop){
-                        $texture = $shop['item']->getTexture();
-                        echo ('<div class="col-sm">
+                        $representation = $shop['item']->getRepresentation();
+                        if($representation["type"] == "item"){
+                            echo ('<div class="col-sm">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <div class="card-top">
                                                 <div class="object">
                                                     <div class="block grass">
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[1].'\');"><!--top --></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[1].'\');"><!--bottom--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--left--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--right--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--back--></div>
-                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--front--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--top --></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][1].'\');"><!--bottom--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--left--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--right--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--back--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$representation["texture"][0].'\');"><!--front--></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,8 +85,27 @@
                                         </div>
                                     </div>
                                 </div>');
+                        }else{
+                            echo ('<div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div class="card-top">
+                                            <img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">
+                                    </div>
+                                    
+                                    <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
+                                    <p class="card-text">Test content</p>
+                                    <div class="mc-button normal">
+                                        <div class="title">Se téléporter</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>');
+                        }
+                        
                     }
                     ?>
+                    <!-- exemple -->
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
@@ -110,6 +130,26 @@
                             </div>
                         </div>
                     </div>
+                    <!-- exemple -->
+
+                    <!-- exemple -->
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <div class="card-top">
+                                    <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/textures/item/copper_ingot.png" alt="Item">
+                                </div>
+                                
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="mc-button normal">
+                                    <div class="title">Se téléporter</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- exemple -->
+
                 </div>
             </div>
         </div>

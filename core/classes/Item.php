@@ -39,22 +39,25 @@ class Item{
     public function getId(){
         return $this->id;
     }
-    public function getTexture(){
-        $texture = array();
+    public function getRepresentation(){
+        $return["texture"] = array();
         if(file_exists("data/images/textures/block/".$this->id.".png")){
-            $texture[0] = "data/images/textures/block/".$this->id.".png";
+            $return["type"] = "block";
+            $return["texture"][0] = "data/images/textures/block/".$this->id.".png";
             if(file_exists("data/images/textures/block/".$this->id."_top.png")){
-                $texture[1] = "data/images/textures/block/".$this->id."_top.png";
+                $return["texture"][1] = "data/images/textures/block/".$this->id."_top.png";
             }
         }elseif(file_exists("data/images/textures/item/".$this->id.".png")){
-            $texture[0] = "data/images/textures/item/".$this->id.".png";
+            $return["type"] = "item";
+            $return["texture"][0] = "data/images/textures/item/".$this->id.".png";
         }else{
-            $texture[0] = "data/images/textures/missing.png";
+            $return["type"] = "unknown";
+            $return["texture"][0] = "data/images/textures/missing.png";
         }
 
-        if(!isset($texture[1])){
-            $texture[1] = $texture[0];
+        if(!isset($return["texture"][1])){
+            $return["texture"][1] = $return["texture"][0];
         }
-        return $texture;
+        return $return["texture"];
     }
 }
