@@ -14,7 +14,7 @@
             <div class="flex-grow-1">
                 <ul class="menuList float-right">
                     <li id="menu-buy" onmouseenter="animatedIcon(this, 'enter')" onmouseleave="animatedIcon(this, 'leave')">
-                        <a href="#" class="nav-link">
+                        <a href="https://live.mc.sl-projects.com/" class="nav-link" target="_blank">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-buy.png" alt="Join icon">
                             </i>
@@ -22,7 +22,7 @@
                         </a>
                     </li>
                     <li id="menu-comm" onmouseenter="animatedIcon(this, 'enter')" onmouseleave="animatedIcon(this, 'leave')">
-                        <a href="#" class="nav-link">
+                        <a href="https://discord.gg/9PYvGFDmDt" class="nav-link" target="_blank">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-comm.svg" alt="Community icon">
                             </i>
@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li id="menu-store" onmouseenter="animatedIcon(this, 'enter')" onmouseleave="animatedIcon(this, 'leave')">
-                        <a href="#" class="nav-link">
+                        <a href="<?=getWebsiteSetting("websiteUrl")?>shops" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-store.svg" alt="Community icon">
                             </i>
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li id="menu-support" onmouseenter="animatedIcon(this, 'enter')" onmouseleave="animatedIcon(this, 'leave')">
-                        <a href="#" class="nav-link">
+                        <a href="<?=getWebsiteSetting("websiteUrl")?>staff" class="nav-link">
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.svg" alt="Staff icon">
                             </i>
