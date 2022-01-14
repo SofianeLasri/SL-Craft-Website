@@ -1,10 +1,8 @@
 <?php
 class Shop{
     public static function getAllProducts(){
-        $itemConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchAll(PDO::FETCH_ASSOC);
-        $items = yaml_parse($itemConfig);
-        print_r($items);
-
+        $itemsConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchAll(PDO::FETCH_ASSOC);
+        
         /*
         item:
             ==: org.bukkit.inventory.ItemStack
@@ -13,7 +11,10 @@ class Shop{
         */
         
         $return = array();
-        foreach($items as $item){
+        foreach($itemsConfig as $itemConfig){
+            $item = yaml_parse($itemConfig);
+            print_r($items);
+
             $itemAleadyEntered = false;
             foreach($return as $checkItem){
                 if($item['item']['type'] == $checkItem->getId()){
