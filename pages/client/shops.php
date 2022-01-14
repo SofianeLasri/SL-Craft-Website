@@ -15,6 +15,8 @@
 
     <!-- Uniquement pour la vitrine -->
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/css/flickity.css" media="screen">
+
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/icons-minecraft-0.49.css">
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->
@@ -30,11 +32,12 @@
                     <div class="form-group">
                         <label>Example multiple select</label>
                         <select multiple class="form-control" name="blocs[]">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <?php
+                            $items = Shop::getAllProducts();
+                            foreach($items as $item) {
+                                echo '<option value="'.$item->getId().'">'.$item->getName().'</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="mc-button normal" onClick="javascript:this.form.submit();">
