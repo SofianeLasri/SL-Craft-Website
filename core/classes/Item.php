@@ -13,7 +13,7 @@ class Item{
         }else{
             $this->id=$item;
         }
-        $query = Connexion::pdo()->prepare("SELECT * FROM site_itemsAssoc WHERE label=?");
+        $query = Connexion::pdo()->prepare("SELECT * FROM site_itemsAssoc WHERE name=?");
         $query->execute(array($this->id));
         $result= $query->fetch(PDO::FETCH_ASSOC);
         $this->label = $result['label'];
