@@ -162,3 +162,10 @@ body{
 .mc-button.lang .title {
     padding-bottom: 0;
 }
+.modal-title{
+    font-family: "Proxima Nova Bold"!important;
+    color: white!important;
+}
+.modal-header{
+    background-color: #000!important;
+}
