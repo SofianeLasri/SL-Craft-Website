@@ -1,6 +1,6 @@
 <?php
 class Item{
-    private $name;
+    private $label;
     private $price;
     private $css;
     private $type;
@@ -13,15 +13,15 @@ class Item{
         }else{
             $this->id=$item;
         }
-        $query = Connexion::pdo()->prepare("SELECT * FROM site_itemsAssoc WHERE name=?");
+        $query = Connexion::pdo()->prepare("SELECT * FROM site_itemsAssoc WHERE label=?");
         $query->execute(array($this->id));
         $result= $query->fetch(PDO::FETCH_ASSOC);
-        $this->name = $result['name'];
+        $this->label = $result['label'];
         $this->css = $result['css'];
     }
     
-    public function getName(){
-        return $this->name;
+    public function getLabel(){
+        return $this->label;
     }
     
     public function getPrice(){

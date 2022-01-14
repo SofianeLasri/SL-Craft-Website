@@ -13,7 +13,6 @@ class Shop{
         $return = array();
         foreach($itemsConfig as $itemConfig){
             $item = yaml_parse($itemConfig['itemConfig']);
-            print_r($items);
 
             $itemAleadyEntered = false;
             foreach($return as $checkItem){

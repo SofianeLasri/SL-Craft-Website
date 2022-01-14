@@ -35,7 +35,7 @@
                             <?php
                             $items = Shop::getAllProducts();
                             foreach($items as $item) {
-                                echo '<option value="'.$item->getId().'">'.$item->getName().'</option>';
+                                echo '<option value="'.$item->getId().'">'.$item->getLabel().'</option>';
                             }
                             ?>
                         </select>
