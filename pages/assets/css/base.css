@@ -162,6 +162,16 @@ body{
 .mc-button.lang .title {
     padding-bottom: 0;
 }
+/* Fin du btn minecraft */
+
+/* Modification du modal par défaut */
+.modal-dialog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 .modal-title{
     font-family: "Proxima Nova Bold"!important;
     color: white!important;
