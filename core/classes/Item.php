@@ -41,7 +41,6 @@ class Item{
     }
     public function getTexture(){
         $texture = array();
-        echo "data/images/textures/block/".$this->id.".png";
         if(file_exists("data/images/textures/block/".$this->id.".png")){
             $texture[0] = "data/images/textures/block/".$this->id.".png";
             if(file_exists("data/images/textures/block/".$this->id."_top.png")){
