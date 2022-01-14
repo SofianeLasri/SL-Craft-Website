@@ -57,7 +57,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="mc-button normal" data-dismiss="modal">
-                        <div class="title">Copié</div>
+                        <div class="title">Fermer</div>
                     </div>
                 </div>
             </div>
