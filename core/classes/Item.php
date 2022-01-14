@@ -58,6 +58,6 @@ class Item{
         if(!isset($return["texture"][1])){
             $return["texture"][1] = $return["texture"][0];
         }
-        return $return["texture"];
+        return $return;
     }
 }
