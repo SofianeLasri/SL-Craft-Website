@@ -37,6 +37,9 @@
                             <option>5</option>
                         </select>
                     </div>
+                    <button type="submit" class="mc-button normal">
+                        <div class="title">Rejoindre</div>
+                    </button>
                 </form>
             </div>
             <div class="col-md-10">
