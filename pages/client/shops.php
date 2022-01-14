@@ -86,7 +86,7 @@
                                             <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
                                             <div class="d-flex align-items-center">
                                                 <div class="mc-face-viewer-4x" style="background-image:url(\''.$shop['seller']->getSkin().'\')"></div>
-                                                <div class="d-flex flex-column">
+                                                <div class="d-flex flex-column pl-2">
                                                     <span><strong>Vendu par:</strong> '.$shop['seller']->getUsername().'</span>
                                                     <span><strong>Prix:</strong> '.$shop['price'].'€</span>
                                                 </div>
