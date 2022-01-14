@@ -116,3 +116,8 @@ a.siteName:hover {
 }
 
 /* Fin intro vitrine */
+
+/* Shops */
+.shopsFilter select.form-control{
+    height: 15rem!important;
+}

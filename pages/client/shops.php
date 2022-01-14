@@ -24,22 +24,12 @@
     <!-- Contenu -->
     <div class="container mt-5">
         <div class="row">
-            <div class="col-6 col-md-2 border-right">
+            <div class="col-6 col-md-2 border-right shopsFilters">
                 <h3>Filtres</h3>
                 <form method="get">
                     <div class="form-group">
                         <label>Example multiple select</label>
                         <select multiple class="form-control" name="blocs[]">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
