@@ -51,8 +51,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Adresse du serveur</label>
-                        <input type="text" class="form-control" value="play.sl-craft.fr" readonly   >
+                        <label>Minecraft Java Edition</label>
+                        <input type="text" class="form-control" value="play.sl-craft.fr" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Minecraft Bedrock Edition</label>
+                        <input type="text" class="form-control" value="proxy.sl-craft.fr:19132" readonly>
                     </div>
                 </div>
                 <div class="modal-footer">
