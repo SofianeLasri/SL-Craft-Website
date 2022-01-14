@@ -1,7 +1,7 @@
 <?php
 class Shop{
     public static function getAllProducts(){
-        $itemConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchColumn();
+        $itemConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchAll(PDO::FETCH_ASSOC);
         $items = yaml_parse($itemConfig);
         print_r($items);
 
