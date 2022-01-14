@@ -123,4 +123,9 @@ a.siteName:hover {
 }
 .card-top{
     height: 7rem;
+    display: flex;
+    justify-content: center;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }

@@ -32,10 +32,6 @@
     -webkit-animation: spin 30s infinite linear;
     -moz-animation: spin 30s infinite linear;
     animation: spin 30s infinite linear;
-
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
   }
   .block > div {
     height: 100%;
