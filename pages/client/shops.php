@@ -60,7 +60,7 @@
                     $shops = Shop::getShops();
                     foreach($shops as $shop){
                         $representation = $shop['item']->getRepresentation();
-                        if($representation["type"] == "item"){
+                        if($representation["type"] == "block"){
                             echo ('<div class="col-sm">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
