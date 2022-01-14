@@ -39,4 +39,22 @@ class Item{
     public function getId(){
         return $this->id;
     }
+    public function getTexture(){
+        $texture = array();
+        if(file_exists("data/images/textures/block/".$this->id.".png")){
+            $texture[0] "data/images/textures/block/".$this->id.".png";
+            if(file_exists("data/images/textures/block/".$this->id."_top.png")){
+                $texture[1] "data/images/textures/block/".$this->id."_top.png";
+            }
+        }elseif(file_exists("data/images/textures/item/".$this->id.".png")){
+            $texture[0] "data/images/textures/item/".$this->id.".png";
+        }else{
+            $texture[0] "data/images/textures/missing.png";
+        }
+
+        if(!isset($texture[1])){
+            $texture[1] = $texture[0];
+        }
+        return $texture;
+    }
 }

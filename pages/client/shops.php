@@ -56,6 +56,38 @@
                 <h3>Liste des magasins</h3>
 
                 <div class="row">
+                    <?php
+                    $shops = Shop::getAllShops();
+                    foreach($shop as $shop){
+                        $texture = $shop['item']->getTexture();
+                        echo ('<div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <div class="card-top">
+                                                <div class="object">
+                                                    <div class="block grass">
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[1].'\');"><!--top --></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[1].'\');"><!--bottom--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--left--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--right--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--back--></div>
+                                                        <div style="background: url(\''.getWebsiteSetting("websiteUrl").$texture[0].'\');"><!--front--></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
+                                            <p class="card-text">Test content</p>
+                                            <a href="#">
+                                                <div class="mc-button normal">
+                                                    <div class="title">Se téléporter</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>');
+                    }
+                    ?>
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
