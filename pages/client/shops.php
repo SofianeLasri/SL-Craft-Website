@@ -22,7 +22,7 @@
     <div id="navbarReplacement" style="z-index:-1;"></div>
     
     <!-- Contenu -->
-    <div class="container">
+    <div class="container mt-5">
         <h3>Liste des magasins</h3>
     </div>
 
