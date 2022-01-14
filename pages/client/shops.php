@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-6 col-md-2 border-right shopsFilters">
                 <h3>Filtres</h3>
-                <form method="get">
+                <form method="get" name="filterForm">
                     <div class="form-group">
                         <label>Example multiple select</label>
                         <select multiple class="form-control" name="blocs[]">
@@ -40,7 +40,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="mc-button normal" onclick="javascript:this.form.submit();">
+                    <div class="mc-button normal" onclick="document.forms['filterForm'].submit();">
                         <div class="title">Rejoindre</div>
                     </div>
                 </form>
