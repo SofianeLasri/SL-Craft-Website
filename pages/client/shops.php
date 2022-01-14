@@ -37,9 +37,9 @@
                             <option>5</option>
                         </select>
                     </div>
-                    <button type="submit" class="mc-button normal">
+                    <div class="mc-button normal" onClick="javascript:this.form.submit();">
                         <div class="title">Rejoindre</div>
-                    </button>
+                    </div>
                 </form>
             </div>
             <div class="col-md-10">
