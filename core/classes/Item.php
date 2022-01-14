@@ -47,6 +47,12 @@ class Item{
             if(file_exists("data/images/textures/block/".$this->id."_top.png")){
                 $return["texture"][1] = "data/images/textures/block/".$this->id."_top.png";
             }
+        }elseif(file_exists("data/images/textures/block/".$this->id."_side.png")){
+            $return["type"] = "block";
+            $return["texture"][0] = "data/images/textures/block/".$this->id."_side.png";
+            if(file_exists("data/images/textures/block/".$this->id."_top.png")){
+                $return["texture"][1] = "data/images/textures/block/".$this->id."_top.png";
+            }
         }elseif(file_exists("data/images/textures/item/".$this->id.".png")){
             $return["type"] = "item";
             $return["texture"][0] = "data/images/textures/item/".$this->id.".png";
