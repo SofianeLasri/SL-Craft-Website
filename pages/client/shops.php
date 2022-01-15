@@ -76,10 +76,19 @@
                         }else{
                             $cardTop = ('<img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">');
                         }
+
+                        if($shop['stock'] <=10){
+                            $badge = "warning";
+                            if($shop['stock'] <= 0){
+                                $badge = "danger";
+                            }
+                        }else{
+                            $badge = "success";
+                        }
                         echo ('<div class="col-sm mb-2">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
-                                            <span class="badge badge-secondary">Stock: '.$shop['stock'].'</span>
+                                            <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
                                             <div class="card-top">
                                                 '.$cardTop.'
                                             </div>
