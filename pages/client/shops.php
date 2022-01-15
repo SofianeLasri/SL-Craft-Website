@@ -79,6 +79,7 @@
                         echo ('<div class="col-sm mb-2">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
+                                            <span class="badge badge-secondary">Stock: '.$shop['stock'].'</span>
                                             <div class="card-top">
                                                 '.$cardTop.'
                                             </div>
