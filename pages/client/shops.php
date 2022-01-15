@@ -85,7 +85,7 @@
                         }else{
                             $badge = "success";
                         }
-                        echo ('<div class="col-sm mb-2">
+                        echo ('<div class="col-3 mb-2">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
