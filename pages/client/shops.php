@@ -223,10 +223,10 @@
         function goToShop(id){
             var shopItemDetail='<p>Type: <strong>'+$('#'+id).attr('type')+'</strong></p>';
             if($("#"+id).attr("displayName") != ""){
-                shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURI($("#"+id).attr("displayName"))+'</strong></p>';
+                shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURIComponent($("#"+id).attr("displayName"))+'</strong></p>';
             }
             if($("#"+id).attr("enchants") != ""){
-                let enchants = JSON.parse(decodeURI($("#"+id).attr("enchants")));
+                let enchants = JSON.parse(decodeURIComponent($("#"+id).attr("enchants")));
                 for(const [key, value] of Object.entries(enchants)){
                     shopItemDetail+='<p>Enchantement: <strong>'+key+'</strong> ('+value+')</p>';
                 }
