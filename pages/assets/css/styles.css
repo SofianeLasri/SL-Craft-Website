@@ -131,20 +131,23 @@ a.siteName:hover {
 }
 .enchant {
     text-align: center;
-    
     background: linear-gradient(to right, #FFF 20%, #bd34eb 40%, #bd34eb 60%, #FFF 80%);
     background-size: 200% auto;
-    
     color: #000;
     background-clip: text;
     text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+    -webkit-animation: shine 1s linear infinite;
     animation: shine 1s linear infinite;
-    @keyframes shine {
-      to {
+}
+@-webkit-keyframes shine {
+    to {
         background-position: 200% center;
-      }
     }
-  }
+}
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
