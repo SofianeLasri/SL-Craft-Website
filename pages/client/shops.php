@@ -222,10 +222,10 @@
         // On va définir la taille de la div derrière la navbar
         function goToShop(id){
             var shopItemDetail='<p>Type: <strong>'+$('#'+id).attr('type')+'</strong></p>';
-            if($("#"+id).attr("displayName") != ""){
+            if($("#"+id).attr("displayName") != "null"){
                 shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURIComponent($("#"+id).attr("displayName"))+'</strong></p>';
             }
-            if($("#"+id).attr("enchants") != ""){
+            if($("#"+id).attr("enchants") != "null"){
                 let enchants = JSON.parse(decodeURIComponent($("#"+id).attr("enchants")));
                 for(const [key, value] of Object.entries(enchants)){
                     shopItemDetail+='<p>Enchantement: <strong>'+key+'</strong> ('+value+')</p>';
