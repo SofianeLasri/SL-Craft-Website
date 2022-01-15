@@ -131,7 +131,7 @@ a.siteName:hover {
 }
 .enchant {
     text-align: center;
-    background: linear-gradient(to right, #FFF 20%, #bd34eb 40%, #bd34eb 60%, #FFF 80%);
+    background: linear-gradient(to right, #000 20%, #bd34eb 40%, #bd34eb 60%, #000 80%);
     background-size: 200% auto;
     color: #000;
     background-clip: text;
