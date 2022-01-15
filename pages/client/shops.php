@@ -90,7 +90,7 @@
                         // Si l'item possède un nom custom, on va l'afficher
                         if($shop['item']->getDisplayName() != null){
                             $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> ';
-                            $displayName .= (strlen($shop['item']->getDisplayName()) > 22) ? substr($shop['item']->getDisplayName(),0,19).'...' : $shop['item']->getDisplayName()
+                            $displayName .= (strlen($shop['item']->getDisplayName()) > 22) ? substr($shop['item']->getDisplayName(),0,19).'...' : $shop['item']->getDisplayName();
                         }else{
                             $displayName = $shop['item']->getLabel();
                         }
