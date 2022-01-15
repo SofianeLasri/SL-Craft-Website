@@ -102,7 +102,7 @@
                                                 </div>
                                             </div>
                                             <div class="mc-button normal" onclick="goToShop('.$shop['x'].','.$shop['y'].','.$shop['z'].',\''.$shop['world'].'\')">
-                                                <div class="title">Rejoindre</div>
+                                                <div class="title">Acheter</div>
                                             </div>
                                         </div>
                                     </div>
