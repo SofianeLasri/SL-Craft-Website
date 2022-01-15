@@ -89,9 +89,10 @@
 
                         // Si l'item possède un nom custom, on va l'afficher
                         if($shop['item']->getDisplayName() != null){
-                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> '.$shop['item']->getDisplayName();
+                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> '.(strlen($shop['item']->getLabel()) > 22) ? substr($shop['item']->getLabel(),0,19).'...' : $shop['item']->getLabel();
                         }else{
-                            $displayName = (strlen($shop['item']->getLabel()) > 22) ? substr($shop['item']->getLabel(),0,19).'...' : $shop['item']->getLabel();
+                            
+                            $displayName = $shop['item']->getLabel();
                         }
 
                         // Si l'item est enchant, on va lui appliquer un style custom
