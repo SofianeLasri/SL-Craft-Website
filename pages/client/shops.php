@@ -116,7 +116,7 @@
                                                     <span><strong>Prix:</strong> '.$shop['price'].'€</span>
                                                 </div>
                                             </div>
-                                            <div class="mc-button normal" onclick="goToShop('.$shopId.')">
+                                            <div class="mc-button normal" onclick="goToShop(\''.$shopId.'\')">
                                                 <div class="title">Acheter</div>
                                             </div>
                                         </div>
