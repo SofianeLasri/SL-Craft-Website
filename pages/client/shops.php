@@ -89,7 +89,7 @@
 
                         // Si l'item possède un nom custom, on va l'afficher
                         if($shop['item']->getDisplayName() != null){
-                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> ';
+                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag" data-toggle="tooltip" data-placement="bottom" title="Item renommé"></i> ';
                             $displayName .= (strlen($shop['item']->getDisplayName()) > 16) ? substr($shop['item']->getDisplayName(),0,13).'...' : $shop['item']->getDisplayName();
                         }else{
                             $displayName = $shop['item']->getLabel();
@@ -101,7 +101,7 @@
                         }
 
                         $shopId = getRandomString(4);
-                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName"'.$shop['item']->getDisplayName().'" enchants="'.json_encode($shop['item']->getEnchants()).'" type="'.json_encode($shop['item']->getId()).'">
+                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName"'.urlencode($shop['item']->getDisplayName()).'" enchants="'.urlencode(json_encode($shop['item']->getEnchants())).'" type="'.json_encode($shop['item']->getId()).'" price="'.$shop['price'].'">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
@@ -188,7 +188,7 @@
                     <h5 class="modal-title">Détails de l'article</h5>
                 </div>
                 <div class="modal-body" id="shopModalBody">
-                    <p>Type d'objet: <span id="shopItemType"></span></p>
+                    <div id="shopItemDetail"></div>
                     <div class="form-group">
                         <label>Coordonnées du magasin</label>
                         <div class="d-flex">
@@ -221,14 +221,29 @@
     <script type="text/javascript">
         // On va définir la taille de la div derrière la navbar
         function goToShop(id){
-            $("#shopItemType").html($("#shopItem"+id).attr("type"));
+            var shopItemDetail='<p>Type: <strong>'+$('#'+id).attr('type')+'</strong></p>';
+            if($("#"+id).attr("displayName") != ""){
+                shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURI($("#"+id).attr("displayName"))+'</strong></p>';
+            }
+            if($("#"+id).attr("enchants") != ""){
+                let enchants = JSON.parse(decodeURI($("#"+id).attr("enchants")));
+                for(const [key, value] of Object.entries(enchants)){
+                    shopItemDetail+='<p>Enchantement: <strong>'+key+'</strong> ('+value+')</p>';
+                }
+            }
+            shopItemDetail+='<p>Prix: <strong>'+$("#"+id).attr("price")+'€</strong></p>';
+
+            $("#shopItemDetail").html(shopItemDetail);
             $("#shopXPos").val($("#"+id).attr("x"));
             $("#shopYPos").val($("#"+id).attr("y"));
             $("#shopZPos").val($("#"+id).attr("z"));
             $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+$("#"+id).attr("world")+";flat;"+$("#"+id).attr("x")+","+$("#"+id).attr("y")+","+$("#"+id).attr("z")+";5");
             $("#shopModal").modal("show");
         }
-        
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
         
     </script>
 </body>
