@@ -169,7 +169,7 @@
         <div class="modal-dialog">
             <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
                 <div class="modal-header">
-                    <h5 class="modal-title">Détail du magasin</h5>
+                    <h5 class="modal-title">Coordonnées du magasin</h5>
                 </div>
                 <div class="modal-body" id="shopModalBody">
                     <div class="form-group">
