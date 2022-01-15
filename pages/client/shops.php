@@ -91,7 +91,7 @@
                         if($shop['item']->getDisplayName() != null){
                             $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> '.$shop['item']->getDisplayName();
                         }else{
-                            $displayName = $shop['item']->getLabel();
+                            $displayName = (strlen($shop['item']->getLabel()) > 22) ? substr($shop['item']->getLabel(),0,19).'...' : $shop['item']->getLabel();
                         }
 
                         // Si l'item est enchant, on va lui appliquer un style custom
