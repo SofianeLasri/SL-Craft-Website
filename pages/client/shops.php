@@ -101,8 +101,8 @@
                                                     <span><strong>Prix:</strong> '.$shop['price'].'€</span>
                                                 </div>
                                             </div>
-                                            <div class="mc-button normal">
-                                                <div class="title">Se téléporter</div>
+                                            <div class="mc-button normal" onclick="goToShop('.$shop['x'].','.$shop['y'].','.$shop['z'].','.$shop['world'].')">
+                                                <div class="title">Rejoindre</div>
                                             </div>
                                         </div>
                                     </div>
@@ -164,10 +164,43 @@
 
     <?=Client::getFooter()?>
 
+    <!-- shopModal -->
+    <div class="modal fade" id="shopModal">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
+                <div class="modal-header">
+                    <h5 class="modal-title">Détail du magasin</h5>
+                </div>
+                <div class="modal-body" id="shopModalBody">
+                    <div class="form-group">
+                        <label>Coordonnées du magasin</label>
+                        <div class="d-flex">
+                            <input id="shopXPos" type="number" class="form-control" value="0" readonly>
+                            <input id="shopYPos" type="number" class="form-control" value="0" readonly>
+                            <input id="shopZPos" type="number" class="form-control" value="0" readonly>
+                        </div>
+                    </div>
+                    <a id="shopMapLink" href="#" class="text-white" target="_blank"><i class="icon-minecraft icon-minecraft-filled-map"></i> Voir sur la carte</a>
+                </div>
+                <div class="modal-footer">
+                    <div class="mc-button normal" data-dismiss="modal">
+                        <div class="title">Fermer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
         // On va définir la taille de la div derrière la navbar
-        
+        function goToShop(x, y, z, world){
+            $("#shopXPos").val(x);
+            $("#shopYPos").val(y);
+            $("#shopZPos").val(z);
+            $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+world+";flat;"+x+","+y+","+z+";5");
+            $("#shopModal").modal("show");
+        }
         
         
     </script>
