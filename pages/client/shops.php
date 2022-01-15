@@ -89,9 +89,9 @@
 
                         // Si l'item possède un nom custom, on va l'afficher
                         if($shop['item']->getDisplayName() != null){
-                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> '.(strlen($shop['item']->getLabel()) > 22) ? substr($shop['item']->getLabel(),0,19).'...' : $shop['item']->getLabel();
+                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> ';
+                            $displayName .= (strlen($shop['item']->getDisplayName()) > 22) ? substr($shop['item']->getDisplayName(),0,19).'...' : $shop['item']->getDisplayName()
                         }else{
-                            
                             $displayName = $shop['item']->getLabel();
                         }
 
@@ -101,7 +101,7 @@
                         }
 
                         $shopId = getRandomString(4);
-                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName"'.$shop['item']->getDisplayName().'" enchants="'.json_encode($shop['item']->getEnchants()).'">
+                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName"'.$shop['item']->getDisplayName().'" enchants="'.json_encode($shop['item']->getEnchants()).'" type="'.json_encode($shop['item']->getId()).'">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
