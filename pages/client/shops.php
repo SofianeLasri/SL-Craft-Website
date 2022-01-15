@@ -175,9 +175,18 @@
                     <div class="form-group">
                         <label>Coordonnées du magasin</label>
                         <div class="d-flex">
-                            <input id="shopXPos" type="number" class="form-control" value="0" readonly>
-                            <input id="shopYPos" type="number" class="form-control" value="0" readonly>
-                            <input id="shopZPos" type="number" class="form-control" value="0" readonly>
+                            <div>
+                                <label>x</label>
+                                <input id="shopXPos" type="number" class="form-control" value="0" readonly>
+                            </div>
+                            <div>
+                                <label>y</label>
+                                <input id="shopYPos" type="number" class="form-control" value="0" readonly>
+                            </div>
+                            <div>
+                                <label>z</label>
+                                <input id="shopZPos" type="number" class="form-control" value="0" readonly>
+                            </div>
                         </div>
                     </div>
                     <a id="shopMapLink" href="#" class="text-white" target="_blank"><i class="icon-minecraft icon-minecraft-filled-map"></i> Voir sur la carte</a>
