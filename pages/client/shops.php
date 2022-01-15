@@ -175,15 +175,15 @@
                     <div class="form-group">
                         <label>Coordonnées du magasin</label>
                         <div class="d-flex">
-                            <div>
+                            <div class="text-center px-2">
                                 <label>x</label>
                                 <input id="shopXPos" type="number" class="form-control" value="0" readonly>
                             </div>
-                            <div>
+                            <div class="text-center px-2">
                                 <label>y</label>
                                 <input id="shopYPos" type="number" class="form-control" value="0" readonly>
                             </div>
-                            <div>
+                            <div class="text-center px-2">
                                 <label>z</label>
                                 <input id="shopZPos" type="number" class="form-control" value="0" readonly>
                             </div>
