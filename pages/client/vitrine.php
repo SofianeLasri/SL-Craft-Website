@@ -58,6 +58,7 @@
                         <label>Minecraft Bedrock Edition</label>
                         <input type="text" class="form-control" value="proxy.sl-craft.fr:19132" readonly>
                     </div>
+                    <p>*Le serveur est cross-plateformes, vous jouez sur une unique map.</p>
                 </div>
                 <div class="modal-footer">
                     <div class="mc-button normal" data-dismiss="modal">

@@ -77,6 +77,7 @@
                             $cardTop = ('<img src="'.getWebsiteSetting("websiteUrl").$representation["texture"][0].'" alt="'.$shop['item']->getLabel().'">');
                         }
 
+                        // Affichage du stock
                         if($shop['stock'] <=10){
                             $badge = "warning";
                             if($shop['stock'] <= 0){
@@ -85,7 +86,21 @@
                         }else{
                             $badge = "success";
                         }
-                        echo ('<div class="col-3 mb-2">
+
+                        // Si l'item possède un nom custom, on va l'afficher
+                        if($shop['item']->getDisplayName() != null){
+                            $displayName = '<i class="icon-minecraft icon-minecraft-name-tag"></i> '.$shop['item']->getDisplayName();
+                        }else{
+                            $displayName = $shop['item']->getLabel();
+                        }
+
+                        // Si l'item est enchant, on va lui appliquer un style custom
+                        if($shop['item']->getEnchants() != null){
+                            $displayName = '<span class="enchant">'.$displayName.'</span>';
+                        }
+
+                        $shopId = getRandomString(4);
+                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName"'.$shop['item']->getDisplayName().'" enchants="'.json_encode($shop['item']->getEnchants()).'">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
@@ -93,7 +108,7 @@
                                                 '.$cardTop.'
                                             </div>
                                             
-                                            <h5 class="card-title">'.$shop['item']->getLabel().'</h5>
+                                            <h5 class="card-title">'.$displayName.'</h5>
                                             <div class="d-flex align-items-center">
                                                 <div class="mc-face-viewer-4x" style="background-image:url(\''.$shop['seller']->getSkin().'\')"></div>
                                                 <div class="d-flex flex-column pl-2">
@@ -101,7 +116,7 @@
                                                     <span><strong>Prix:</strong> '.$shop['price'].'€</span>
                                                 </div>
                                             </div>
-                                            <div class="mc-button normal" onclick="goToShop('.$shop['x'].','.$shop['y'].','.$shop['z'].',\''.$shop['world'].'\')">
+                                            <div class="mc-button normal" onclick="goToShop('.$shopId.')">
                                                 <div class="title">Acheter</div>
                                             </div>
                                         </div>
@@ -169,9 +184,10 @@
         <div class="modal-dialog">
             <div class="modal-content" style="background-image: url('<?=getWebsiteSetting("websiteUrl")?>data/images/backgrounds/bg-wood-dark.png');">
                 <div class="modal-header">
-                    <h5 class="modal-title">Coordonnées du magasin</h5>
+                    <h5 class="modal-title">Détails de l'article</h5>
                 </div>
                 <div class="modal-body" id="shopModalBody">
+                    <p>Type d'objet: <span id="shopItemType"></span></p>
                     <div class="form-group">
                         <label>Coordonnées du magasin</label>
                         <div class="d-flex">
@@ -203,11 +219,12 @@
     <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
         // On va définir la taille de la div derrière la navbar
-        function goToShop(x, y, z, world){
-            $("#shopXPos").val(x);
-            $("#shopYPos").val(y);
-            $("#shopZPos").val(z);
-            $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+world+";flat;"+x+","+y+","+z+";5");
+        function goToShop(id){
+            $("#shopItemType").html($("#shopItem"+id).attr("type"));
+            $("#shopXPos").val($("#"+id).attr("x"));
+            $("#shopYPos").val($("#"+id).attr("y"));
+            $("#shopZPos").val($("#"+id).attr("z"));
+            $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+$("#"+id).attr("world")+";flat;"+$("#"+id).attr("x")+","+$("#"+id).attr("y")+","+$("#"+id).attr("z")+";5");
             $("#shopModal").modal("show");
         }
         

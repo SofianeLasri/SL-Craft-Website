@@ -5,11 +5,22 @@ class Item{
     private $css;
     private $type;
     private $id;
+    private $displayName;
+    private $enchants;
     
     public function __construct($item){
         if(is_array($item)){
-            $this->price = $item['price'];
-            $this->id = $item['id'];
+            $this->id = $item['type'];
+
+            if(isset($item['meta'])){
+                if(isset($item['meta']['display-name'])){
+                    $displayNameJson = json_decode($item['meta']['display-name'], true);
+                    $this->displayName = $displayNameJson['text'];
+                }
+                if(isset($item['meta']['enchants'])){
+                    $this->enchants = $item['meta']['enchants'];
+                }
+            }
         }else{
             $this->id=$item;
         }
@@ -65,5 +76,11 @@ class Item{
             $return["texture"][1] = $return["texture"][0];
         }
         return $return;
+    }
+    public function getDisplayName(){
+        return $this->displayName;
+    }
+    public function getEnchants(){
+        return $this->enchants;
     }
 }
