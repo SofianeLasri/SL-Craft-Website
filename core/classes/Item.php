@@ -10,7 +10,7 @@ class Item{
     
     public function __construct($item){
         if(is_array($item)){
-            $this->id = $item['type'];
+            $this->id = strtolower($item['type']);
 
             if(isset($item['meta'])){
                 if(isset($item['meta']['display-name'])){

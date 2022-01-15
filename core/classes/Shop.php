@@ -34,7 +34,7 @@ class Shop{
             $shops = Connexion::pdo()->query("SELECT * FROM qs_external_cache NATURAL JOIN qs_shops")->fetchAll(PDO::FETCH_ASSOC);
             for($i=0;$i<count($shops);$i++){
                 $item = yaml_parse($shops[$i]['itemConfig']);
-                $shops[$i]['item'] = new Item(strtolower($item['item']));
+                $shops[$i]['item'] = new Item($item['item']);
                 $owner = json_decode($shops[$i]['owner'], true);
                 $shops[$i]['seller'] = new Seller($owner["owner"]);
             }
