@@ -101,7 +101,7 @@
                         }
 
                         $shopId = getRandomString(4);
-                        echo ('<div class="col-3 mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName="'.urlencode($shop['item']->getDisplayName()).'" enchants="'.urlencode(json_encode($shop['item']->getEnchants())).'" type="'.$shop['item']->getId().'" price="'.$shop['price'].'">
+                        echo ('<div class="col-sm mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName="'.urlencode($shop['item']->getDisplayName()).'" enchants="'.urlencode(json_encode($shop['item']->getEnchants())).'" type="'.$shop['item']->getId().'" price="'.$shop['price'].'">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>
