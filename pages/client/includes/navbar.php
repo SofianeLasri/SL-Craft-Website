@@ -42,7 +42,7 @@
                             <i class="nav-icon">
                                 <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/navbar/menu-support.svg" alt="Staff icon">
                             </i>
-                            Staff
+                            Obtenir de l'aide
                         </a>
                     </li>
                 </ul>
