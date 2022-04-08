@@ -1,6 +1,6 @@
 <?php
 // attributs de la classe Connexion paramètres de connexion à la base
-$bddHost = 'localhost';
+$bddHost = 'node.sl-projects.com';
 $bddName = 'srvMinecraft';
 $bddUsername = 'srvMinecraft';
 $bddUserPassword = 'YIn2hTln5iMQap1W';
