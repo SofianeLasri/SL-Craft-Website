@@ -26,7 +26,7 @@
         <div class="container intro-vitrine">
             <div id="intro-presentation" class="presentation">
                 <div class="description">
-                    <h1>Prêt pour la survie?test</h1>
+                    <h1>Prêt pour la survie?</h1>
                     <p>Rejoins-nous et découvre une communauté construite autour de l’amour pour la survie !
                     <br>Nous disposons de nombreux plugins favorisants l’interaction entre les joueurs, et enrichissant ton expérience de jeu.</p>
                     <div class="mc-button normal" data-toggle="modal" data-target="#connectModal">
