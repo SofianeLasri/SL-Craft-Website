@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=Client::getDependencies()?>
+    <?php Client::getDependencies(); ?>
     <title><?=getWebsiteSetting("websiteName")?> | Magasins</title>
     
     <!-- Embed -->
@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->
-    <?=Client::getNavbar()?>
+    <?php Client::getNavbar(); ?>
     <div id="navbarReplacement" style="z-index:-1;"></div>
     
     <!-- Contenu -->
@@ -32,18 +32,18 @@
                 <h3>Filtres</h3>
                 <form method="get" name="filterForm">
                     <div class="form-group">
-                        <label>Trier par entité/bloc</label>
-                        <select multiple class="form-control" name="blocs[]">
+                        <label for="blockFilter">Trier par entité/bloc</label>
+                        <select id="blockFilter" multiple class="form-control" name="blocs[]">
                             <option value="">Aucune</option>
                             <?php
-                            $items = Shop::getAllProducts();
-                            foreach($items as $item) {
-                                if(isset($_GET["blocs"]) && in_array($item->getType(), $_GET["blocs"])){
+                            $products = Shop::getAllProducts();
+                            foreach($products as $product) {
+                                if(isset($_GET["blocs"]) && in_array($product->getType(), $_GET["blocs"])){
                                     $selected = "selected";
                                 }else{
                                     $selected = "";
                                 }
-                                echo '<option value="'.$item->getType().'" '.$selected.'><i class="icon-minecraft '.$item->getCssClassName().'"></i> '.$item->getLabel().'</option>';
+                                echo '<option value="'.$product->getType().'" '.$selected.'><i class="icon-minecraft '.$product->getCssClassName().'"></i> '.$product->getLabel().'</option>';
                             }
                             ?>
                         </select>
@@ -221,23 +221,24 @@
     <script type="text/javascript">
         // On va définir la taille de la div derrière la navbar
         function goToShop(id){
+            let shopElem = $("#"+id);
             var shopItemDetail='<p>Type: <strong>'+$('#'+id).attr('type')+'</strong></p>';
-            if($("#"+id).attr("displayName") != ""){
-                shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURIComponent($("#"+id).attr("displayName"))+'</strong></p>';
+            if(shopElem.attr("displayName") !== ""){
+                shopItemDetail+='<p>Nom personnalisé: <strong>'+decodeURIComponent(shopElem.attr("displayName"))+'</strong></p>';
             }
-            if($("#"+id).attr("enchants") != "null"){
-                let enchants = JSON.parse(decodeURIComponent($("#"+id).attr("enchants")));
+            if(shopElem.attr("enchants") !== "null"){
+                let enchants = JSON.parse(decodeURIComponent(shopElem.attr("enchants")));
                 for(const [key, value] of Object.entries(enchants)){
                     shopItemDetail+='<p>Enchantement: <strong>'+key+'</strong> ('+value+')</p>';
                 }
             }
-            shopItemDetail+='<p>Prix: <strong>'+$("#"+id).attr("price")+'€</strong></p>';
+            shopItemDetail+='<p>Prix: <strong>'+shopElem.attr("price")+'€</strong></p>';
 
             $("#shopItemDetail").html(shopItemDetail);
-            $("#shopXPos").val($("#"+id).attr("x"));
-            $("#shopYPos").val($("#"+id).attr("y"));
-            $("#shopZPos").val($("#"+id).attr("z"));
-            $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+$("#"+id).attr("world")+";flat;"+$("#"+id).attr("x")+","+$("#"+id).attr("y")+","+$("#"+id).attr("z")+";5");
+            $("#shopXPos").val(shopElem.attr("x"));
+            $("#shopYPos").val(shopElem.attr("y"));
+            $("#shopZPos").val(shopElem.attr("z"));
+            $("#shopMapLink").attr("href", "https://live.mc.sl-projects.com/#"+shopElem.attr("world")+";flat;"+shopElem.attr("x")+","+shopElem.attr("y")+","+shopElem.attr("z")+";5");
             $("#shopModal").modal("show");
         }
 

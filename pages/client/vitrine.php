@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=Client::getDependencies()?>
+    <?php Client::getDependencies(); ?>
     <title><?=getWebsiteSetting("websiteName")?></title>
     
     <!-- Embed -->
@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->
-    <?=Client::getNavbar()?>
+    <?php Client::getNavbar(); ?>
 
     <!-- Intro -->
     <div id="intro">
@@ -40,7 +40,7 @@
     
     <!-- Fin de l'intro -->
 
-    <?=Client::getFooter()?>
+    <?php Client::getFooter(); ?>
 
     <!-- connectModal -->
     <div class="modal fade" id="connectModal">
@@ -51,12 +51,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Minecraft Java Edition</label>
-                        <input type="text" class="form-control" value="play.sl-craft.fr" readonly>
+                        <label for="ipJava">Minecraft Java Edition</label>
+                        <input id="ipJava" type="text" class="form-control" value="play.sl-craft.fr" readonly>
                     </div>
                     <div class="form-group">
-                        <label>Minecraft Bedrock Edition</label>
-                        <input type="text" class="form-control" value="proxy.sl-craft.fr:19132" readonly>
+                        <label for="ipBedrock">Minecraft Bedrock Edition</label>
+                        <input id="ipBedrock" type="text" class="form-control" value="proxy.sl-craft.fr:19132" readonly>
                     </div>
                     <p>*Le serveur est cross-plateformes, vous jouez sur une unique map.</p>
                 </div>
@@ -74,7 +74,7 @@
         // On va définir la taille de l'intro
         setVitrineHeight();
         function setVitrineHeight() {
-            var vitrineHeight = window.innerHeight - document.getElementById("navbar").offsetHeight;
+            let vitrineHeight = window.innerHeight - document.getElementById("navbar").offsetHeight;
             $("#intro").css("height", vitrineHeight);
         }
         window.onresize = setVitrineHeight;
@@ -115,8 +115,9 @@
 
 
             // On va regarder si dans ce que l'on va afficher, il n'y a pas des images à charger
-            var imagesToLoad = [];
-            $(".intro-vitrine .presentation > *").each(async function() {
+            let imagesToLoad = [];
+            let presentationElems = $(".intro-vitrine .presentation > *");
+            presentationElems.each(async function() {
                 let hasABgImageToLoad = $(this).attr('bgImageUrl');
                 if (typeof hasABgImageToLoad !== 'undefined' && hasABgImageToLoad !== false) {
                     imagesToLoad.push(hasABgImageToLoad);
@@ -124,18 +125,19 @@
             });
             console.log("Images à charger:"+imagesToLoad);
             await loadImages(imagesToLoad);
-            $(".intro-vitrine .presentation > *").fadeIn(1000);
+            presentationElems.fadeIn(1000);
             $(".intro-vitrine .presentation .description").css("display", "flex"); // On a retiré la propriété flex pour faire le fadeIn
 
             imagesToLoad = [];
             setTimeout(async function(){
-                let hasABgImageToLoad = $("#vitrine-background-image:hidden").attr('bgImageUrl');
+                let hiddenVitrineBackground = $("#vitrine-background-image:hidden");
+                let hasABgImageToLoad = hiddenVitrineBackground.attr('bgImageUrl');
                 if (typeof hasABgImageToLoad !== 'undefined' && hasABgImageToLoad !== false) {
                     imagesToLoad.push(hasABgImageToLoad);
                 }
                 console.log("Images à charger:"+imagesToLoad);
                 await loadImages(imagesToLoad);
-                $("#vitrine-background-image:hidden").fadeIn(4000);
+                hiddenVitrineBackground.fadeIn(4000);
             }, 1000)
             
         });
