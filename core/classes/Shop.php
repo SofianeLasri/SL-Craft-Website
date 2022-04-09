@@ -1,7 +1,9 @@
 <?php
 class Shop{
-    public static function getAllProducts(){
-        $itemsConfig = Connexion::pdo()->query("SELECT itemConfig FROM qs_shops")->fetchAll(PDO::FETCH_ASSOC);
+    public static function getAllProducts(): array
+    {
+        // On récupère tous les items des magasins
+        $itemsConfigsYaml = BddConn::getPdo()->query("SELECT itemConfig FROM qs_shops")->fetchAll(PDO::FETCH_ASSOC);
         
         /*
         item:
@@ -9,36 +11,50 @@ class Shop{
             v: 2865
             type: WHEAT
         */
-        
-        $return = array();
-        foreach($itemsConfig as $itemConfig){
-            $item = yaml_parse($itemConfig['itemConfig']);
 
-            $itemAleadyEntered = false;
-            foreach($return as $checkItem){
-                if(strtolower($item['item']['type']) == $checkItem->getId()){
-                    $itemAleadyEntered = true;
+        // On va faire la liste de tous les items
+        $items = array();
+        foreach($itemsConfigsYaml as $itemConfigYaml){
+            // On parse le YAML
+            $itemConfig = yaml_parse($itemConfigYaml['itemConfig']);
+
+            $alreadyInList = false;
+            foreach($items as $checkItem){
+                if(strtolower($itemConfig['item']['type']) == $checkItem->getType()){
+                    $alreadyInList = true;
+                    break; // On sort de la boucle
                 }
             }
-            if(!$itemAleadyEntered){
-                $return[] = new Item($item['item']['type']);
+            if(!$alreadyInList){
+                $items[] = new Item($itemConfig['item']['type']);
             }
         }
-        return $return;
+        return $items;
     }
-    public static function getShops($search=null){
-        if(is_array($search)){
 
-        }else{
-            // On récupère les shops
-            $shops = Connexion::pdo()->query("SELECT * FROM qs_external_cache NATURAL JOIN qs_shops")->fetchAll(PDO::FETCH_ASSOC);
-            for($i=0;$i<count($shops);$i++){
-                $item = yaml_parse($shops[$i]['itemConfig']);
-                $shops[$i]['item'] = new Item($item['item']);
-                $owner = json_decode($shops[$i]['owner'], true);
-                $shops[$i]['seller'] = new Seller($owner["owner"]);
+    /**
+     * @throws Exception
+     */
+    public static function getShops($search=array()): array
+    {
+        if(is_array($search)){
+            if(empty($search)){
+                // On récupère les shops
+                $shops = BddConn::getPdo()->query("SELECT * FROM qs_external_cache NATURAL JOIN qs_shops")->fetchAll(PDO::FETCH_ASSOC);
+                for($index=0;$index<count($shops);$index++){
+                    $itemConfig = yaml_parse($shops[$index]['itemConfig']);
+                    $shops[$index]['item'] = new Item($itemConfig['item']);
+                    $owner = json_decode($shops[$index]['owner'], true);
+                    $shops[$index]['seller'] = new Seller($owner["owner"]);
+                }
+                return $shops;
+            }else{
+                // TODO: faire une recherche par critère
+                return array();
             }
-            return $shops;
+        }else{
+            // On lance une exception car on souhaite avoir un array
+            throw new Exception("Search doit être un array");
         }
     }
 }

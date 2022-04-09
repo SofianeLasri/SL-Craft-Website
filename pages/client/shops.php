@@ -38,12 +38,12 @@
                             <?php
                             $items = Shop::getAllProducts();
                             foreach($items as $item) {
-                                if(isset($_GET["blocs"]) && in_array($item->getId(), $_GET["blocs"])){
+                                if(isset($_GET["blocs"]) && in_array($item->getType(), $_GET["blocs"])){
                                     $selected = "selected";
                                 }else{
                                     $selected = "";
                                 }
-                                echo '<option value="'.$item->getId().'" '.$selected.'><i class="icon-minecraft '.$item->getCss().'"></i> '.$item->getLabel().'</option>';
+                                echo '<option value="'.$item->getType().'" '.$selected.'><i class="icon-minecraft '.$item->getCssClassName().'"></i> '.$item->getLabel().'</option>';
                             }
                             ?>
                         </select>
@@ -101,7 +101,7 @@
                         }
 
                         $shopId = getRandomString(4);
-                        echo ('<div class="col-sm mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName="'.urlencode($shop['item']->getDisplayName()).'" enchants="'.urlencode(json_encode($shop['item']->getEnchants())).'" type="'.$shop['item']->getId().'" price="'.$shop['price'].'">
+                        echo ('<div class="col-sm mb-2" id="'.$shopId.'" x="'.$shop['x'].'" y="'.$shop['y'].'" z="'.$shop['z'].'" world="'.$shop['world'].'" displayName="'.urlencode($shop['item']->getDisplayName()).'" enchants="'.urlencode(json_encode($shop['item']->getEnchants())).'" type="'.$shop['item']->getType().'" price="'.$shop['price'].'">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <span class="badge badge-'.$badge.'">Stock: '.$shop['stock'].'</span>

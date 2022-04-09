@@ -2,6 +2,7 @@
 class Client{
     // Charger une page client
     public static function loadPage($alias){
+        // Charger le fichier de la page
         if($alias[0]=="backTasks" && (!empty($_POST)||!empty($_GET))){
             // Si le premier alias est backTasks, on va donc charger la page backTasks
             // backTasks est un alias que l'on appel pour toutes requêtes Javascript ex: vérification de l'existence d'un email dans la bdd

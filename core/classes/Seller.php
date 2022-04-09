@@ -1,26 +1,29 @@
 <?php
 class Seller{
-    private $uuid;
-    private $username;
-    private $skin;
+    private string $uuid;
+    private string $username;
+    private string $skin;
 
     public function __construct($uuid){
         $this->uuid = $uuid;
-        $json = file_get_contents('https://sessionserver.mojang.com/session/minecraft/profile/'.$uuid);
-        $profile = json_decode($json, true);
-        $this->username = $profile['name'];
+        $jsonProfileInfos = file_get_contents('https://sessionserver.mojang.com/session/minecraft/profile/'.$uuid);
+        $profileInfos = json_decode($jsonProfileInfos, true);
+        $this->username = $profileInfos['name'];
 
-        $properties = json_decode(base64_decode($profile['properties'][0]['value']), true);
+        $properties = json_decode(base64_decode($profileInfos['properties'][0]['value']), true);
         $this->skin = $properties['textures']['SKIN']['url'];
     }
 
-    public function getUuid(){
+    public function getUuid(): string
+    {
         return $this->uuid;
     }
-    public function getUsername(){
+    public function getUsername(): string
+    {
         return $this->username;
     }
-    public function getSkin(){
+    public function getSkin(): string
+    {
         return $this->skin;
     }
 }

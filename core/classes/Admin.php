@@ -1,6 +1,9 @@
 <?php
 class Admin{
     // Charger une page admin
+    /**
+     * @throws Exception
+     */
     public static function loadPage($alias){
         if(Admin::checkAdmin()){
             if($alias[0]=="backTasks" && (!empty($_POST)||!empty($_GET))){
@@ -11,7 +14,7 @@ class Admin{
             }else{
                 // On va vérifier que la page existe
                 if(file_exists('pages/admin/'.$alias[0].'.php')){
-                    if(verifyUserPermission($_SESSION['userId'], "adminPanel.".$alias[0]."Access")){
+                    if(verifyUserPermission($_SESSION['uuid'], "slcraft.website.admin.".$alias[0]."access")){
                         require 'pages/admin/'.$alias[0].'.php';
                     }else{
                         Admin::show403($alias[0]);
@@ -23,7 +26,7 @@ class Admin{
             }
         }else{
             // Retrour sur la page de connexion si non conneté, ou s'il n'a pas les perms
-            header("Location: ".genPageLink("/login"));
+            header("Location: /login");
         }
         
     }
