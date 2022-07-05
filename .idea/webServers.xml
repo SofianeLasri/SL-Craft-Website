@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="24631c59-2e41-4506-ad50-24435095dc45" name="SL-Craft" url="https://dev.sl-craft.fr/">
-        <fileTransfer rootFolder="/home/serveur-web/sl-craft-dev/" accessType="SFTP" host="node.sl-projects.com" port="22" sshConfigId="97adedb8-8832-47f7-a52a-6c1ae617a01a" sshConfig="root@node.sl-projects.com:22 password">
+        <fileTransfer rootFolder="/home/serveur-web/sl-craft/dev" accessType="SFTP" host="node.sl-projects.com" port="22" sshConfigId="97adedb8-8832-47f7-a52a-6c1ae617a01a" sshConfig="root@node.sl-projects.com:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
