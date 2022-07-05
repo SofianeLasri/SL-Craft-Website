@@ -13,14 +13,12 @@ const tailwindcss = require("tailwindcss");
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .vue()
     .sass('resources/scss/app.scss', 'public/css')
     .css('resources/css/icons-minecraft-0.49.css', 'public/css')
     .css('resources/css/minecraft-skinviewer.css', 'public/css')
     .options({
         postCss: [ tailwindcss('./tailwind.config.js') ],
-    })
-    .version();
+    });
 
 // Fonts awesome
 mix.js('resources/js/fontawesome/all.js', 'public/js/fontawesome/all.js')
