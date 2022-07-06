@@ -1,0 +1,324 @@
+@use "base";
+@use "fontawesome/fontawesome";
+@use "fontawesome/brands";
+@use "fontawesome/duotone";
+@use "fontawesome/light";
+@use "fontawesome/regular";
+@use "fontawesome/solid";
+@use "fontawesome/thin";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navbar */
+/* Structure */
+.navbar{
+    z-index: 999;
+    box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+    /* On annule les styles de Bootstrap */
+    padding: 0;
+}
+.navbar .upperPart{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navbar .upperPart .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end!important;
+}
+
+.navbar .lowerPart{
+    width: 100%;
+    height: 83px;
+    background-image: url("../images/backgrounds/bg-wool-dark.png");
+    background-size: auto 442px;
+    box-shadow: 0 5px 0 0 rgb(0 0 0 / 25%);
+}
+.navbar .lowerPart .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important; /* Bootstrap l'en empêche sinon */
+    align-items: center;
+    height: 100%;
+}
+.navbar .lowerPart  .siteLogo .logoFont{
+    color: white !important; /* Evite de faire la classe :hover */
+    font-size: 2rem;
+    text-align: left;
+    text-decoration: none;
+}
+.navbar .lowerPart .siteLogo img{
+    height: 1.5rem;
+}
+
+.navbar .lowerPart .desktopNavLinksContainer{
+    display: flex;
+    flex-direction: row;
+    /* Juste pour être sûr que les liens soient alignés à droite, au milieu */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.desktopNavLinksContainer dl, .desktopNavLinksContainer ol, .desktopNavLinksContainer ul{
+    margin: 0;
+    padding: 0;
+}
+.desktopNavLinksContainer{
+    li{
+        text-align: center;
+        display: table-cell;
+
+        a{
+            .nav-icon {
+                display: inline-block;
+                font-size: 12px;
+                line-height: inherit;
+                margin-right: 4px;
+                width: 69px;
+
+                img{
+                    display: inline!important;
+                    margin-top: -5px;
+                    margin-right: -12px;
+                    width: 75%;
+                    margin-left: -1px;
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+}
+
+#mobileNavButton{
+    display: none;
+}
+
+/* Médias Queries */
+/* Format téléphone */
+@media (max-width: 450px){
+    .navbar{
+        box-shadow: 0 0 0 0!important;
+    }
+    .navbar .upperPart{
+        display: none !important;
+    }
+    .navbar .lowerPart{
+        box-shadow: 0 0 0 0!important;
+    }
+    .navbar .lowerPart .container{
+        justify-content: flex-start !important; /* Bootstrap l'en empêche sinon */
+    }
+    .desktopNavLinksContainer{
+        display: none !important;
+    }
+    .navbar .lowerPart .siteLogo{
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .lowerPart .siteLogo img{
+        height: 1.4rem;
+    }
+    #mobileNavButton{
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+    }
+    #mobileNavButton img{
+        width: 36px;
+        height: auto;
+        background-repeat: no-repeat;
+        text-align: center;
+        margin: 0 auto;
+        border-style: none;
+    }
+}
+
+/* Format tablette */
+@media (max-width: 1023px){
+    .desktopNavLinksContainer{
+        display: none !important;
+    }
+}
+
+/* Toolbox */
+.nav-link{
+    padding: .5rem .75rem ;
+    color: white !important; /* Evite de faire la classe :hover */
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+/* Fin navbar */
+
+/* Vitrine */
+.vitrine-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /*height: calc(100vh - 83px);*/
+}
+.vitrine-intro .backgroundVideo{
+    /* La hauteur de la div va être définie en Javascript */
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    background-image: url("../images/backgrounds/vitrineIntroVideoBg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.vitrine-intro .backgroundVideo video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.vitrine-intro .backgroundOverlay{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0,0,0,0.1);
+}
+.intro-container{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* 110px correspond à peut de choses près, à la hauteur de la navbar. De toute façon on réajuste en JS */
+    height: calc(100vh - 110px);
+    flex-grow: 1;
+
+    .welcomeMessage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: white;
+        flex-grow: 1;
+
+        h1{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: white;
+            font-family: "Minecraft Ten", sans-serif !important;
+        }
+    }
+    .newsCardsSlider{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .newsCard {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 21rem;
+            height: 11rem;
+            margin: 1rem;
+
+            .subtitle {
+                font-size: .8rem;
+                color: white;
+                text-transform: uppercase;
+                margin-top: -.5rem;
+                margin-bottom: .5rem;
+            }
+
+            h4 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: .8rem;
+                color: white;
+            }
+        }
+    }
+}
+
+.transparentTop-to-whiteWool{
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+    background-image: url("../images/backgrounds/trans-top-transparent-to-whitewool.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+/* Médias Queries */
+/* Format téléphone */
+@media (max-width: 450px){
+    .newsCardsSlider .newsCard{
+        width: 100%;
+    }
+}
+
+/* Format tablette */
+@media (max-width: 1023px){
+
+}
+
+/* Format écran pc de taille moyenne */
+@media (max-width: 1600px){
+    /*.vitrine-intro{
+        height: calc(100vh - 100px);
+    }
+    .vitrine-intro .update-post{
+        width: 40rem;
+        height: 20rem;
+    }*/
+}
+/* Fin vitrine */
+
+.testContent{
+    width: 100%;
+    height: 50rem;
+}
+
+/* Shops */
+.shopsFilters select{
+    height: 15rem!important;
+}
+.card-top{
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+.enchant {
+    text-align: center;
+    background: linear-gradient(to right, #000 20%, #bd34eb 40%, #bd34eb 60%, #000 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: shine 1s linear infinite;
+}
+@-webkit-keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}

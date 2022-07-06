@@ -1,0 +1,179 @@
+/*@font-face {
+    font-family: 'Inter Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Regular'), url('../fonts/Inter-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Italic'), url('../fonts/Inter-Italic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Thin BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Thin BETA'), url('../fonts/Inter-Thin-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Thin Italic BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Thin Italic BETA'), url('../fonts/Inter-ThinItalic-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Extra Light BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Extra Light BETA'), url('../fonts/Inter-ExtraLight-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Extra Light Italic BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Extra Light Italic BETA'), url('../fonts/Inter-ExtraLightItalic-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Light BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Light BETA'), url('../fonts/Inter-Light-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Light Italic BETA';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Light Italic BETA'), url('../fonts/Inter-LightItalic-BETA.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Medium'), url('../fonts/Inter-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Medium Italic'), url('../fonts/Inter-MediumItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Semi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Semi Bold'), url('../fonts/Inter-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Semi Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Semi Bold Italic'), url('../fonts/Inter-SemiBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Bold'), url('../fonts/Inter-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Bold Italic'), url('../fonts/Inter-BoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Extra Bold'), url('../fonts/Inter-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Extra Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Extra Bold Italic'), url('../fonts/Inter-ExtraBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Black'), url('../fonts/Inter-Black.woff') format('woff');
+}
+@font-face {
+    font-family: 'Inter Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Black Italic'), url('../fonts/Inter-BlackItalic.woff') format('woff');
+}*/
+
+@font-face {
+    font-family: "Zaptron-Regular";
+    src: url('../fonts/zaptron.woff2') format('woff2'), url('../fonts/zaptron.woff') format('woff');
+}
+
+/*@font-face {font-family: "DIN Next LT W04 Medium Cond";
+    src: url("../fonts/DinNextLtW04MediumCond.eot"); !* IE9*!
+    src: url("../fonts/DinNextLtW04MediumCond.eot?#iefix") format("embedded-opentype"), !* IE6-IE8 *!
+    url("../fonts/DinNextLtW04MediumCond.woff2") format("woff2"), !* chrome、firefox *!
+    url("../fonts/DinNextLtW04MediumCond.woff") format("woff"), !* chrome、firefox *!
+    url("../fonts/DinNextLtW04MediumCond.ttf") format("truetype"), !* chrome、firefox、opera、Safari, Android, iOS 4.2+*!
+    url("../fonts/DinNextLtW04MediumCond.svg#DIN Next LT W04 Medium Cond") format("svg"); !* iOS 4.1- *!
+}
+@font-face {font-family: "DIN Next LT W04 Regular Cond";
+    src: url("../fonts/DinNextLtW04MediumCond.eot"); !* IE9*!
+    src: url("../fonts/DinNextLtW04MediumCond.eot?#iefix") format("embedded-opentype"), !* IE6-IE8 *!
+    url("../fonts/DinNextLtW04MediumCond.woff2") format("woff2"), !* chrome、firefox *!
+    url("../fonts/DinNextLtW04MediumCond.woff") format("woff"), !* chrome、firefox *!
+    url("../fonts/DinNextLtW04MediumCond.ttf") format("truetype"), !* chrome、firefox、opera、Safari, Android, iOS 4.2+*!
+    url("../fonts/DinNextLtW04MediumCond.svg#DIN Next LT W04 Regular Cond") format("svg"); !* iOS 4.1- *!
+}
+
+@font-face {font-family: "Raleway Regular";
+    src: url("../fonts/RalewayRegular.eot"); !* IE9*!
+    src: url("../fonts/RalewayRegular.eot?#iefix") format("embedded-opentype"), !* IE6-IE8 *!
+    url("../fonts/RalewayRegular.woff2") format("woff2"), !* chrome、firefox *!
+    url("../fonts/RalewayRegular.woff") format("woff"), !* chrome、firefox *!
+    url("../fonts/RalewayRegular.ttf") format("truetype"), !* chrome、firefox、opera、Safari, Android, iOS 4.2+*!
+    url("../fonts/RalewayRegular.svg#Raleway Regular") format("svg"); !* iOS 4.1- *!
+}*/
+
+@font-face {font-family: "Proxima Nova Regular";
+    src: url("../fonts/proxima-nova-regular.eot"); /* IE9*/
+    src: url("../fonts/proxima-nova-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/proxima-nova-regular.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/proxima-nova-regular.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+@font-face {font-family: "Proxima Nova Bold";
+    src: url("../fonts/proxima-nova-bold.eot"); /* IE9*/
+    src: url("../fonts/proxima-nova-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/proxima-nova-bold.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/proxima-nova-bold.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+@font-face {font-family: "Proxima Nova Condensed Black";
+    src: url("../fonts/proxima-nova-condesed-black.eot"); /* IE9*/
+    src: url("../fonts/proxima-nova-condesed-black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/proxima-nova-condesed-black.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/proxima-nova-condesed-black.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/proxima-nova-condesed-black.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../fonts/proxima-nova-condesed-black.svg#Proxima Nova Condensed Black") format("svg"); /* iOS 4.1- */
+}
+@font-face {font-family: "Proxima Nova Condensed";
+    src: url("../fonts/proxima-nova-condesed.eot"); /* IE9*/
+    src: url("../fonts/proxima-nova-condesed.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/proxima-nova-condesed.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/proxima-nova-condesed.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
+@font-face {
+    font-family: Minecraftia;
+    src: url('../fonts/Minecraftia-Regular.ttf') format('truetype');
+}
+@font-face {font-family: "Minecraft Ten";
+    src: url("../fonts/MinecraftTen.eot"); /* IE9*/
+    src: url("../fonts/MinecraftTen.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/MinecraftTen.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/MinecraftTen.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/MinecraftTen.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../fonts/MinecraftTen.svg#Minecraft Ten") format("svg"); /* iOS 4.1- */
+}
