@@ -17,6 +17,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    // MetaColor
+
+    'meta_color' => env('META_COLOR', 'FFFFFF'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

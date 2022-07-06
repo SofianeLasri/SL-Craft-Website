@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
+require('laravel-mix-copy-watched');
 const tailwindcss = require("tailwindcss");
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -42,32 +44,15 @@ mix.js('resources/js/fontawesome/all.js', 'public/js/fontawesome/all.js')
 
 // Copy files
 // Logos & autres images génériques
-mix.copy('resources/images/logo/favicon-blanc.ico', 'public/images/logo/favicon-blanc.ico')
-    .copy('resources/images/logo/favicon-blanc.svg', 'public/images/logo/favicon-blanc.svg')
-    .copy('resources/images/logo/favicon-color.png', 'public/images/logo/favicon-color.png')
-    .copy('resources/images/logo/large-blanc.png', 'public/images/logo/large-blanc.png')
-    .copy('resources/images/logo/large-blanc.svg', 'public/images/logo/large-blanc.svg')
-    .copy('resources/images/logo/large-color.png', 'public/images/logo/large-color.png')
-    .copy('resources/images/logo/short-blanc.png', 'public/images/logo/short-blanc.png')
-    .copy('resources/images/logo/short-blanc.svg', 'public/images/logo/short-blanc.svg')
-    .copy('resources/images/logo/short-color.png', 'public/images/logo/short-color.png');
-
-
-
-// Navbar
-mix.copy('resources/images/navbar/menu-buy.gif', 'public/images/navbar/menu-buy.gif')
-    .copy('resources/images/navbar/menu-buy--reversed.gif', 'public/images/navbar/menu-buy--reversed.gif')
-    .copy('resources/images/navbar/menu-comm.gif', 'public/images/navbar/menu-comm.gif')
-    .copy('resources/images/navbar/menu-comm--reversed.gif', 'public/images/navbar/menu-comm--reversed.gif')
-    .copy('resources/images/navbar/menu-store.gif', 'public/images/navbar/menu-store.gif')
-    .copy('resources/images/navbar/menu-store--reversed.gif', 'public/images/navbar/menu-store--reversed.gif')
-    .copy('resources/images/navbar/menu-support.gif', 'public/images/navbar/menu-support.gif')
-    .copy('resources/images/navbar/menu-support--reversed.gif', 'public/images/navbar/menu-support--reversed.gif');
+mix.copyWatched( 'resources/images/**/*.{jpg,jpeg,png,gif,svg}', 'public/images', { base: 'resources/images' } );
 
 // Vitrine
 mix.copy('resources/videos/720p-h264-crf30.mp4', 'public/videos/720p-h264-crf30.mp4')
     .copy('resources/videos/1080p-h264-crf30.mp4', 'public/videos/1080p-h264-crf30.mp4')
     .copy('resources/videos/1440p-h264-crf30.mp4', 'public/videos/1440p-h264-crf30.mp4');
+
+// Purge css
+mix.purgeCss();
 /*
 mix.webpackConfig({
     stats: {
