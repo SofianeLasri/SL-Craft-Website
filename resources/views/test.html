@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="theme-light">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!--[Component] HeadBar-->
+    <div id="headbar">
+        <div class="icon-container">
+            <div id="headbar-popup-button" data-open="false" class="img" style="background-image:url(../images/navbar/hamburger-icon.svg)"><span class="img" style="background-image:url(../images/navbar/Horizontal-bar.svg)"></span></div>
+            <!--TODO: ajouter au boutton un js click event pour dérouler le menu -->
+            <div class="img logo" style="background-image:url('../images/logo/large-blanc.svg')"></div>
+        </div>
+
+        <div class="account-container" id="account-container" data-logged="true">
+            <div class="not-logged">
+                <div class="login-button" id="login-button">
+                    <p>Se connecter</p>
+                </div>
+            </div>
+            <div class="logged">
+                <div class="notification-container" id="notification-container" data-open="false">
+                    <span class="img" style="background-image:url('../images/logo/favicon-blanc.svg')"></span>
+                    <div class="notification-content"></div>
+                </div>
+                <div class="user-container" id="user-action-dropdown" data-open="false">
+                    <div class="user-infos">
+                        <img class="head img" id="playerHead" src="../images/navbar/loader.svg">
+                        <div class="infos">
+                            <p id="username">Username</p>
+                            <p id="userclass">Player</p>
+                        </div>
+                    </div>
+                    <div class="img arrow"></div>
+                    <div class="drop-action-container"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!--[Component] SideMenu-->
+    <div id="Sidemenu" data-open="false">
+        <div class="menu">
+            <div class="button selected" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>Home</p></span></div>
+            <div class="button" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>News</p></span></div>
+            <div class="button" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>Map</p></span></div>
+            <div class="button" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>Shops</p></span></div>
+            <div class="button" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>Pepoles</p></span></div>
+            <div class="button" data-href="#"><span class="img" style="background-image:url('../images/logo/short-blanc.svg')"></span><span class="texte"><p>Help</p></span></div>
+        </div>
+
+    </div>
+    <script src="../js/header.js"></script>
+    <!--[View] Main container-->
+    <div id="Container" data--Sidebaropen="true">
+        <div id="Content">
+        </div>
+        <!--[Component] Sidebar-->
+        <div id="Sidebar">
+            <div id="SidebarcloseButton"></div>
+            <div class="content"></div>
+        </div>
+    </div>
+    <script src="../js/Sidebar.js"></script>
+</body>
+
+</html>

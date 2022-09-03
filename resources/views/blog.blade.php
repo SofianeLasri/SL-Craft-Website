@@ -19,7 +19,7 @@
             color: white;
         }</style>
     <p>Coucou</p>
-    <p>Home page</p>
+    <p>Blog page</p>
 
 
 @endsection

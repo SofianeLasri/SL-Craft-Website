@@ -15,7 +15,6 @@
     --orange-dark: #d35a00;
 }
 body{
-    margin: 0;
     font-family: "Proxima Nova Regular", sans-serif !important;
 }
 
@@ -69,16 +68,20 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Zaptron-Regular", sans-serif;
 }
 
-p {
+/*p {
     margin-top: 0 !important;
     margin-bottom: 1rem !important;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-top: 0 !important;
-    margin-bottom: .5rem !important;
+    //margin-bottom: .5rem !important;
     font-weight: 500 !important;
     line-height: 1.2;
+}*/
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p{
+    line-height: normal;
 }
 
 /* Bouton orange */

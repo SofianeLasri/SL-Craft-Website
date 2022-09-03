@@ -1,16 +1,3 @@
-@use "base";
-@use "fontawesome/fontawesome";
-@use "fontawesome/brands";
-@use "fontawesome/duotone";
-@use "fontawesome/light";
-@use "fontawesome/regular";
-@use "fontawesome/solid";
-@use "fontawesome/thin";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +26,7 @@ p {
     font-weight: 500;
 }
 
+
 /*HEADBAR*/
 
 #headbar {
@@ -49,7 +37,7 @@ p {
     align-items: center;
     justify-content: space-between;
     border-bottom: 4px solid var(--green);
-
+    
 }
 
 
@@ -156,6 +144,7 @@ p {
 
 #headbar .account-container[data-logged="true"] .logged {
     display: flex;
+    justify-content: space-around;
 }
 
 
@@ -174,30 +163,13 @@ p {
     background-color: var(--background)
 }
 
-#headbar .notification-container .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#headbar .notification-container span {
+    display: block;
     height: 100%;
     width: 100%;
 }
-#headbar .notification-container .label {
-    position: relative;
-    top: -12px;
-    right: 8px;
-    background: red;
-    font-family: 'Proxima Nova Condensed Black', Impact, serif;
-    font-size: 12px;
-    padding: 0 6px;
-    min-width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    border-radius: 30px;
-    color: var(--white);
-}
 
-#headbar .notification-container:hover .icon svg {
+#headbar .notification-container:hover span {
     animation: shaking 0.7s 1 linear;
 }
 
@@ -223,7 +195,7 @@ p {
     0% {
         height: 0;
     }
-
+    
 }
 
 @keyframes shaking {
@@ -280,7 +252,7 @@ p {
     height: 60%;
     width: 80%;
     /*background-color: goldenrod;*/
-    margin-left: 0.6%;
+    margin-left: 1%;
 }
 
 #headbar .account-container .user-container .user-infos .infos #username {
@@ -296,7 +268,6 @@ p {
     font-size: 1vw;
     font-weight: 600;
 }
-
 #headbar .account-container .user-container .arrow::before{
     font: var(--fa-font-solid);
     content: "\f0dd";
@@ -341,6 +312,7 @@ p {
 
 
 /*-------------------------------*/
+
 
 /*SIDEMENU*/
 
@@ -454,6 +426,7 @@ p {
 
 
 /*-------------------------------*/
+
 
 /*MAIN CONTAINER*/
 

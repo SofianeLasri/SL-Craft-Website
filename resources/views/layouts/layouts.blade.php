@@ -13,11 +13,18 @@
     @yield('head')
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
 </head>
-<body>
-
-    @yield('body')
-
+<body class="theme-light">
+    <x-public.header></x-public.header>
+    <x-public.sidemenu></x-public.sidemenu>
+    <div id="Container" data--Sidebaropen="true">
+        <div id="Content">
+            @yield('body')
+        </div>
+        <x-public.sidebar></x-public.sidebar>
+    </div>
     @yield('footer')
+
+
 
     <script src="{{ mix('/js/app.js') }}"></script>
     <script src="{{ mix('/js/fontawesome/all.js') }}"></script>

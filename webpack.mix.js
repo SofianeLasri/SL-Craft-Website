@@ -47,10 +47,10 @@ mix.js('resources/js/fontawesome/all.js', 'public/js/fontawesome/all.js')
 mix.copyWatched( 'resources/images/**/*.{jpg,jpeg,png,gif,svg}', 'public/images', { base: 'resources/images' } );
 
 // Vitrine
-mix.copy('resources/videos/720p-h264-crf30.mp4', 'public/videos/720p-h264-crf30.mp4')
+/*mix.copy('resources/videos/720p-h264-crf30.mp4', 'public/videos/720p-h264-crf30.mp4')
     .copy('resources/videos/1080p-h264-crf30.mp4', 'public/videos/1080p-h264-crf30.mp4')
     .copy('resources/videos/1440p-h264-crf30.mp4', 'public/videos/1440p-h264-crf30.mp4');
-
+*/
 // Purge css
 mix.purgeCss();
 /*
