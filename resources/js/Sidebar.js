@@ -7,6 +7,7 @@ function SetupSidebar() {
         var opened = mainContainer.dataset.Sidebaropen;
         mainContainer.dataset.Sidebaropen = (opened == "true" ? false : true);
     })
+
 }
 
 SetupSidebar()

@@ -37,7 +37,6 @@ p {
     align-items: center;
     justify-content: space-between;
     border-bottom: 4px solid var(--green);
-    
 }
 
 
@@ -195,7 +194,6 @@ p {
     0% {
         height: 0;
     }
-    
 }
 
 @keyframes shaking {
@@ -268,16 +266,18 @@ p {
     font-size: 1vw;
     font-weight: 600;
 }
-#headbar .account-container .user-container .arrow::before{
+
+#headbar .account-container .user-container .arrow::before {
     font: var(--fa-font-solid);
     content: "\f0dd";
-    color:var(--white);
+    color: var(--white);
     display: block;
     width: fit-content;
     height: fit-content;
     transform: translateY(-7px);
     font-size: 1.5vw;
 }
+
 #headbar .account-container .user-container .arrow {
     height: 90%;
     width: 15%;
@@ -353,6 +353,9 @@ p {
     cursor: pointer;
     transition: background-color 0.3s;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Sidemenu[data-open="true"] .menu .button {
@@ -402,15 +405,14 @@ p {
     transition: all 0.3s;
 }
 
-
 #Sidemenu[data-open="true"] .menu .button:hover .texte {
     background-color: var(--background-light);
 }
+
 #Sidemenu .menu .button.selected .texte,
 #Sidemenu .menu .button.selected:hover .texte {
     background-color: var(--green);
 }
-
 
 #Sidemenu[data-open="true"] .menu .button .texte p {
     color: var(--white);

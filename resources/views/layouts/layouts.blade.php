@@ -27,6 +27,5 @@
 
 
     <script src="{{ mix('/js/app.js') }}"></script>
-    <script src="{{ mix('/js/fontawesome/all.js') }}"></script>
     @stack('scripts')
 </html>

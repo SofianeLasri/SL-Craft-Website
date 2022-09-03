@@ -22,7 +22,7 @@ function SetupHeader() {
         /**Setup Player data*/
         const user = {
             name: "gagafeee",
-            notification: {}
+            notification: {0:0,0:0,0:0,0:0}
         }
 
         const playerHead = document.getElementById("playerHead");
